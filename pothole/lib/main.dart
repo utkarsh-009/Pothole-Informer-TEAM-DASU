@@ -10,7 +10,6 @@ import './pages/user_homepage.dart';
 import './pages/user_login_page.dart';
 import './utils/routes.dart';
 import 'pages/user_homepage.dart';
-import './pages/login_page.dart';
 
 void main() {
   runApp(MyApp());
