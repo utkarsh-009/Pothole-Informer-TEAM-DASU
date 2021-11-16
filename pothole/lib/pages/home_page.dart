@@ -4,9 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pothole/layout/back.dart';
 import 'package:pothole/widgets/GridWidgets/custom_grid.dart';
-import 'package:pothole/widgets/home_user_info.dart';
+import 'package:pothole/widgets/Home/home_user_info.dart';
 
-import '../widgets/home_header.dart';
+import '../widgets/Home/home_header.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
