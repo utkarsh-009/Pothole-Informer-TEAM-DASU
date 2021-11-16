@@ -111,7 +111,7 @@ class _UserLoginState extends State<UserLogin> {
                       child: InkWell(
                         onTap: () => moveToHome(context),
                         child: AnimatedContainer(
-                          duration: Duration(seconds: 1),
+                          duration: Duration(milliseconds: 800),
                           width: changeButton ? 50 : 150,
                           height: 50,
                           alignment: Alignment.center,
