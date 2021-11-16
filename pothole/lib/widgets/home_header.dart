@@ -8,18 +8,10 @@ class Homeheader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 50, left: 16, right: 10),
+      padding: const EdgeInsets.only(top: 30, left: 16, right: 10),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Text(
-            "Pothole Informer",
-            textScaleFactor: MediaQuery.of(context).size.width / 200,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-          ),
           IconButton(
             onPressed: () {},
             icon: Icon(

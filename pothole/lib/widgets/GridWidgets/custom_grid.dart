@@ -7,12 +7,12 @@ import '../../Models/grid_items.dart';
 import '../../widgets/GridWidgets/custom_grid_tile.dart';
 
 class CustomGrid extends StatelessWidget {
-  int rows = 3;
-  int columns = 2;
+  final rows = 3;
+  final columns = 2;
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(16),
+      margin: EdgeInsets.only(bottom: 16, left: 16, right: 16),
       height: MediaQuery.of(context).size.width * rows / 2,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -28,8 +28,8 @@ class CustomGrid extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: CustomGridTile(
-                          image: Items[0][0].image,
-                          text: Items[0][0].text,
+                          image: Items[r][c].image,
+                          text: Items[r][c].text,
                         ),
                       ),
                     );

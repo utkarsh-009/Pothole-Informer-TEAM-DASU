@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Pothole Informer",
       debugShowCheckedModeBanner: false,
-      initialRoute: MyRoutes.loginPageRoute,
+      initialRoute: MyRoutes.homePageRoute,
       routes: {
         MyRoutes.homePageRoute: (context) => HomePage(),
         MyRoutes.loginPageRoute: (context) => LoginPage(),

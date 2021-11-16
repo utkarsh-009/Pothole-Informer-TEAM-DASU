@@ -1,12 +1,12 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
 
 class CustomGridTile extends StatelessWidget {
-  String image;
-  String text;
+  final String image;
+  final String text;
 
-  CustomGridTile({
+  const CustomGridTile({
     Key? key,
     required this.image,
     required this.text,
@@ -14,24 +14,29 @@ class CustomGridTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
-      child: Card(
-        elevation: 3,
-        child: GridTile(
-          child: Image.asset(image),
-          footer: Center(
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
+      elevation: 5,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(bottom: 8.0),
-              child: Text(
-                text,
-                textScaleFactor: 1.5,
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
+              padding: const EdgeInsets.only(top: 22),
+              child: Image.asset(image),
             ),
           ),
-        ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              text,
+              textScaleFactor: 1.5,
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ),
+        ],
       ),
     );
   }

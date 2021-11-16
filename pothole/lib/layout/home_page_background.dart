@@ -16,7 +16,8 @@ class HomeBackground extends StatelessWidget {
           BlendMode.darken,
         ),
         child: Image.network(
-          "https://media.gettyimages.com/photos/pot-hole-picture-id172668923?s=612x612",
+          //"https://media.gettyimages.com/photos/pot-hole-picture-id172668923?s=612x612",
+          "https://wallpaperaccess.com/full/3895612.jpg",
           fit: BoxFit.cover,
         ),
       ),
