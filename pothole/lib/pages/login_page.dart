@@ -89,7 +89,7 @@ class LoginPage extends StatelessWidget {
                           ),
                           onPressed: () {
                             Navigator.pushNamed(
-                                context, MyRoutes.homePageRoute);
+                                context, MyRoutes.userHomeRoute);
                           },
                           child: Text("Submit"),
                         )

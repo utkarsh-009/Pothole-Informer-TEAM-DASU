@@ -1,9 +1,15 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:pothole/utils/routes.dart';
 
-import './pages/home_page.dart';
+import './pages/admin_homepage.dart';
+import './pages/admin_login_page.dart';
+import './pages/first_page.dart';
+import './pages/user_homepage.dart';
+import './pages/user_login_page.dart';
+import './utils/routes.dart';
+import 'pages/user_homepage.dart';
 import './pages/login_page.dart';
 
 void main() {
@@ -18,10 +24,26 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Pothole Informer",
       debugShowCheckedModeBanner: false,
-      initialRoute: MyRoutes.homePageRoute,
+      home: AnimatedSplashScreen(
+        splash: Image.asset(
+          'assets/images/pothole_splash.png',
+          height: 200,
+          width: 100,
+        ),
+        splashIconSize: double.infinity,
+        nextScreen: FirstPage(),
+        splashTransition: SplashTransition.fadeTransition,
+        backgroundColor: Colors.deepPurple,
+      ),
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+      ),
       routes: {
-        MyRoutes.homePageRoute: (context) => HomePage(),
-        MyRoutes.loginPageRoute: (context) => LoginPage(),
+        MyRoutes.firstPageRoute: (context) => FirstPage(),
+        MyRoutes.userLoginRoute: (context) => UserLogin(),
+        MyRoutes.adminLoginRoute: (context) => AdminLogin(),
+        MyRoutes.userHomeRoute: (context) => UserHomePage(),
+        MyRoutes.adminHomeRoute: (context) => AdminHomePage(),
       },
     );
   }

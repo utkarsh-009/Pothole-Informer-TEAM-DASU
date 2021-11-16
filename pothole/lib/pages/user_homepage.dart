@@ -8,8 +8,8 @@ import 'package:pothole/widgets/Home/home_user_info.dart';
 
 import '../widgets/Home/home_header.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class UserHomePage extends StatelessWidget {
+  const UserHomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
