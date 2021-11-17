@@ -23,20 +23,21 @@ class _CustomGridTileState extends State<CustomGridTile> {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () async {
-        elv = 1;
-        setState(() {});
-        await Future.delayed(Duration(milliseconds: 200));
-        elv = 5;
-        setState(() {});
-        Navigator.pushNamed(context, widget.route);
-      },
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
-        elevation: elv,
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
+      elevation: elv,
+      clipBehavior: Clip.antiAlias,
+      child: InkWell(
+        onTap: () async {
+          elv = 1;
+          setState(() {});
+          await Future.delayed(Duration(milliseconds: 200));
+          elv = 5;
+          setState(() {});
+          Navigator.pushNamed(context, widget.route);
+        },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
