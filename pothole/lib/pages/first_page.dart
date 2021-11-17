@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import '../utils/routes.dart';
-import '../utils/themes.dart';
 
 class FirstPage extends StatelessWidget {
   const FirstPage({Key? key}) : super(key: key);

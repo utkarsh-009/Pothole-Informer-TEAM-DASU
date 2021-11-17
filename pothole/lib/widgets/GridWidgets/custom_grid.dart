@@ -30,6 +30,7 @@ class CustomGrid extends StatelessWidget {
                         child: CustomGridTile(
                           image: Items[r][c].image,
                           text: Items[r][c].text,
+                          route: Items[r][c].route,
                         ),
                       ),
                     );

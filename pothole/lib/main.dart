@@ -2,6 +2,9 @@
 
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:pothole/pages/HomeNavs/FeedBack.dart';
+import 'package:pothole/pages/HomeNavs/home_inform.dart';
+import 'package:pothole/pages/HomeNavs/maps.dart';
 
 import './pages/admin_homepage.dart';
 import './pages/admin_login_page.dart';
@@ -43,6 +46,9 @@ class MyApp extends StatelessWidget {
         MyRoutes.adminLoginRoute: (context) => AdminLogin(),
         MyRoutes.userHomeRoute: (context) => UserHomePage(),
         MyRoutes.adminHomeRoute: (context) => AdminHomePage(),
+        MyRoutes.informRoute: (context) => InformPage(),
+        MyRoutes.mapRoute: (context) => MapPage(),
+        MyRoutes.feedbackRoute: (context) => FeedbackPage(),
       },
     );
   }

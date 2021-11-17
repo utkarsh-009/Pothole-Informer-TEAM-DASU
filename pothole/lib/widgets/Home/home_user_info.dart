@@ -11,22 +11,22 @@ class HomeUserInfo extends StatelessWidget {
       child: Column(
         children: [
           CircleAvatar(
-            child: Image.network(
-                "https://www.pngall.com/wp-content/uploads/5/Profile-Male-Transparent.png"),
+            child: Image.asset("assets/images/Profile_image.png"),
             radius: MediaQuery.of(context).size.width / 8,
-            backgroundColor: Colors.white,
+            backgroundColor: Colors.purple[50],
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
               "Amogh Prabhu",
               style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w600,
+                color: Colors.purple[50],
+                fontWeight: FontWeight.w500,
               ),
-              textScaleFactor: MediaQuery.of(context).size.width / 350,
+              textScaleFactor: MediaQuery.of(context).size.width / 280,
             ),
           ),
+      
         ],
       ),
     );
