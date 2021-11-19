@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "64324109307-ikbf8jc8nlud359ttfo27p3qofdv0j12.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pothole",
+            "certificate_hash": "49135938f20673f6f4ff3716545dfa7821edd434"
+          }
+        },
+        {
           "client_id": "64324109307-l6li62gkubgfvev8pmdio2sg29pvmujl.apps.googleusercontent.com",
           "client_type": 3
         }
