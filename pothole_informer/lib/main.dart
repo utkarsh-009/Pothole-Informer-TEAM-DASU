@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Pothole Infdfnadgnnormer",
+      title: "Pothole Informer",
       debugShowCheckedModeBanner: false,
       home: AnimatedSplashScreen(
         splash: Image.asset(
