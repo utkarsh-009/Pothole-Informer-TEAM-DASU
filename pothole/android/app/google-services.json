@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "64324109307",
+    "project_id": "test2-50c49",
+    "storage_bucket": "test2-50c49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64324109307:android:4575a37c0ae316bfdc815e",
+        "android_client_info": {
+          "package_name": "com.example.pothole"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "64324109307-l6li62gkubgfvev8pmdio2sg29pvmujl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAT8XUEkS6F94iIjHO5DwIzdeYDXMAdqGg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "64324109307-l6li62gkubgfvev8pmdio2sg29pvmujl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

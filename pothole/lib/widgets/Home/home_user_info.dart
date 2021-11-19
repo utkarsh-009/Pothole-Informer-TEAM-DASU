@@ -1,5 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:ffi';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomeUserInfo extends StatelessWidget {
@@ -7,18 +10,23 @@ class HomeUserInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!;
+
     return Container(
+      margin: EdgeInsets.symmetric(horizontal: 64, vertical: 8),
+      height: MediaQuery.of(context).size.width / 2.8,
       child: Column(
         children: [
           CircleAvatar(
-            child: Image.asset("assets/images/Profile_image.png"),
-            radius: MediaQuery.of(context).size.width / 8,
-            backgroundColor: Colors.purple[50],
+            radius: MediaQuery.of(context).size.width / 10,
+            backgroundImage: NetworkImage(user.photoURL!),
+            backgroundColor: Colors.black,
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
+          SizedBox(height: 10),
+          Expanded(
             child: Text(
-              "Amogh Prabhu",
+              user.displayName!,
+              maxLines: 1,
               style: TextStyle(
                 color: Colors.purple[50],
                 fontWeight: FontWeight.w500,
@@ -26,7 +34,17 @@ class HomeUserInfo extends StatelessWidget {
               textScaleFactor: MediaQuery.of(context).size.width / 280,
             ),
           ),
-      
+          SizedBox(height: 5),
+          Expanded(
+            child: Text(
+              "Email: " + user.email!,
+              maxLines: 1,
+              style: TextStyle(
+                color: Colors.purple[50],
+              ),
+              textScaleFactor: MediaQuery.of(context).size.width / 350,
+            ),
+          ),
         ],
       ),
     );

@@ -10,8 +10,16 @@ class Homeheader extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 30, left: 16, right: 10),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.menu,
+              color: Colors.white,
+              size: 27,
+            ),
+          ),
           IconButton(
             onPressed: () {},
             icon: Icon(
@@ -19,7 +27,7 @@ class Homeheader extends StatelessWidget {
               color: Colors.white,
               size: 27,
             ),
-          )
+          ),
         ],
       ),
     );
