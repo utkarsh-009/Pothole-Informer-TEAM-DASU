@@ -67,4 +67,8 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
+<<<<<<< HEAD
 apply plugin: 'com.google.gms.google-services'
+=======
+apply plugin: 'com.google.gms.google-services'
+>>>>>>> c2ebd66b9cfd1bb3b4d811a2d2eb1537fcf06b86

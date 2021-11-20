@@ -1,33 +1,63 @@
 {
   "project_info": {
+<<<<<<< HEAD
     "project_number": "873664720395",
     "project_id": "pothole-informer-321c4",
     "storage_bucket": "pothole-informer-321c4.appspot.com"
+=======
+    "project_number": "64324109307",
+    "project_id": "test2-50c49",
+    "storage_bucket": "test2-50c49.appspot.com"
+>>>>>>> c2ebd66b9cfd1bb3b4d811a2d2eb1537fcf06b86
   },
   "client": [
     {
       "client_info": {
+<<<<<<< HEAD
         "mobilesdk_app_id": "1:873664720395:android:b8c04737f51661c8f5e10e",
+=======
+        "mobilesdk_app_id": "1:64324109307:android:4575a37c0ae316bfdc815e",
+>>>>>>> c2ebd66b9cfd1bb3b4d811a2d2eb1537fcf06b86
         "android_client_info": {
           "package_name": "com.example.pothole"
         }
       },
       "oauth_client": [
         {
+<<<<<<< HEAD
           "client_id": "873664720395-3hfooh85blcsj3l3gksgm3kbeirmrbe2.apps.googleusercontent.com",
+=======
+          "client_id": "64324109307-ikbf8jc8nlud359ttfo27p3qofdv0j12.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pothole",
+            "certificate_hash": "49135938f20673f6f4ff3716545dfa7821edd434"
+          }
+        },
+        {
+          "client_id": "64324109307-l6li62gkubgfvev8pmdio2sg29pvmujl.apps.googleusercontent.com",
+>>>>>>> c2ebd66b9cfd1bb3b4d811a2d2eb1537fcf06b86
           "client_type": 3
         }
       ],
       "api_key": [
         {
+<<<<<<< HEAD
           "current_key": "AIzaSyA6EbDt-9uehWb0juEbHfdrVPN0uZLh6h8"
+=======
+          "current_key": "AIzaSyAT8XUEkS6F94iIjHO5DwIzdeYDXMAdqGg"
+>>>>>>> c2ebd66b9cfd1bb3b4d811a2d2eb1537fcf06b86
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
+<<<<<<< HEAD
               "client_id": "873664720395-3hfooh85blcsj3l3gksgm3kbeirmrbe2.apps.googleusercontent.com",
+=======
+              "client_id": "64324109307-l6li62gkubgfvev8pmdio2sg29pvmujl.apps.googleusercontent.com",
+>>>>>>> c2ebd66b9cfd1bb3b4d811a2d2eb1537fcf06b86
               "client_type": 3
             }
           ]
