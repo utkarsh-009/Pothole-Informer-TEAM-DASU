@@ -36,6 +36,16 @@ dependencies:
   cupertino_icons: ^1.0.2
   animated_splash_screen: ^1.1.0
 
+  #Google Sign In
+  firebase_auth: ^1.1.4
+  google_sign_in: ^5.0.3
+
+  #Google Icon
+  font_awesome_flutter: ^9.0.0
+
+  #State Management
+  provider: ^5.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
