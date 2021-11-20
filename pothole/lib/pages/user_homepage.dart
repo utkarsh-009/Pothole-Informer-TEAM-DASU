@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:pothole/layout/back.dart';
 import 'package:pothole/widgets/GridWidgets/custom_grid.dart';
+import 'package:pothole/widgets/Home/home_drawer.dart';
 import 'package:pothole/widgets/Home/home_user_info.dart';
 import 'package:pothole/widgets/Home/user_stats.dart';
 
@@ -13,33 +14,35 @@ class UserHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color.fromRGBO(242, 241, 240, 1),
-      body: Stack(
+    return Material(
+      child: Stack(
         children: [
           HomeBack(),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Homeheader(),
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      SizedBox(height: 2),
-                      HomeUserInfo(),
-                      UserStats(
-                        noFeedbacks: 2,
-                        noInforms: 5,
-                        fixed: 4,
-                        pending: 1,
-                      ),
-                      CustomGrid(),
-                    ],
+          Scaffold(
+            backgroundColor: Color.fromRGBO(0, 0, 0, 0),
+            appBar: AppBar(
+              backgroundColor: Color.fromRGBO(255, 255, 255, 0),
+              elevation: 0,
+              title: Text("Pothole Informer"),
+              actions: [
+                IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+                IconButton(onPressed: () {}, icon: Icon(Icons.notifications))
+              ],
+            ),
+            body: SingleChildScrollView(
+              child: Column(
+                children: [
+                  UserStats(
+                    noFeedbacks: 2,
+                    noInforms: 5,
+                    fixed: 4,
+                    pending: 1,
                   ),
-                ),
+                  CustomGrid(),
+                ],
               ),
-            ],
+            ),
+            drawer: HomeDrawer(),
           )
         ],
       ),
