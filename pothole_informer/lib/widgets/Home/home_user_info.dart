@@ -13,7 +13,7 @@ class HomeUserInfo extends StatelessWidget {
       child: Column(
         children: [
           CircleAvatar(
-            child: Image.network(user.photoURL!),
+            backgroundImage: NetworkImage(user.photoURL!),
             radius: MediaQuery.of(context).size.width / 8,
             backgroundColor: Colors.purple[50],
           ),
