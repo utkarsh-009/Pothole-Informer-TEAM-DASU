@@ -20,6 +20,7 @@ import './pages/first_page.dart';
 import './pages/user_homepage.dart';
 import './pages/user_login_page.dart';
 import './utils/routes.dart';
+import './pages/slide_intro.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -65,6 +66,7 @@ class MyApp extends StatelessWidget {
           MyRoutes.aboutRoute: (context) => AboutPage(),
           MyRoutes.googleUserLogin: (context) => GoogleUserLogin(),
           MyRoutes.userPage: (context) => UserPage(),
+          MyRoutes.sliderIntroRoute: (context) => SplashScreen(),
         },
       ),
     );

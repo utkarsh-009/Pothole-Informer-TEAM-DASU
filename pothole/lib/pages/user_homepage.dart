@@ -2,12 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:pothole/layout/back.dart';
+import 'package:pothole/utils/routes.dart';
 import 'package:pothole/widgets/GridWidgets/custom_grid.dart';
 import 'package:pothole/widgets/Home/home_drawer.dart';
-import 'package:pothole/widgets/Home/home_user_info.dart';
 import 'package:pothole/widgets/Home/user_stats.dart';
-
-import '../widgets/Home/home_header.dart';
 
 class UserHomePage extends StatelessWidget {
   const UserHomePage({Key? key}) : super(key: key);
@@ -25,8 +23,12 @@ class UserHomePage extends StatelessWidget {
               elevation: 0,
               title: Text("Pothole Informer"),
               actions: [
-                IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-                IconButton(onPressed: () {}, icon: Icon(Icons.notifications))
+                IconButton(onPressed: () {}, icon: Icon(Icons.notifications)),
+                IconButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, MyRoutes.sliderIntroRoute);
+                    },
+                    icon: Icon(Icons.info_outline)),
               ],
             ),
             body: SingleChildScrollView(

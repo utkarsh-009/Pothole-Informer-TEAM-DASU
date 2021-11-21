@@ -6,6 +6,7 @@ class MyRoutes {
   static String userHomeRoute = '/userHome';
   static String adminHomeRoute = '/adminHome';
   static String userPage = '/userPage';
+  static String sliderIntroRoute = 'slderIntro';
 
   static String informRoute = '/inform';
   static String mapRoute = '/map';

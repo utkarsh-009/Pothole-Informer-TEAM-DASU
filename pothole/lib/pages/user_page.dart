@@ -4,6 +4,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pothole/pages/google_user_login_page.dart';
+import 'package:pothole/pages/slide_intro.dart';
 import 'package:pothole/pages/user_homepage.dart';
 
 class UserPage extends StatelessWidget {
