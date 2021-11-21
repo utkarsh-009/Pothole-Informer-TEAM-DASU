@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:pothole_informer/utils/routes.dart';
 
-class SplashScreen extends StatefulWidget {
+class SlideIntro extends StatefulWidget {
   static TextStyle styleTitle = TextStyle(
     color: Colors.white,
     fontSize: 38,
@@ -17,13 +17,13 @@ class SplashScreen extends StatefulWidget {
     fontFamily: GoogleFonts.prozaLibre().fontFamily,
     fontWeight: FontWeight.w400,
   );
-  const SplashScreen({Key? key}) : super(key: key);
+  const SlideIntro({Key? key}) : super(key: key);
 
   @override
-  _SplashScreen createState() => _SplashScreen();
+  _SlideIntro createState() => _SlideIntro();
 }
 
-class _SplashScreen extends State<SplashScreen> {
+class _SlideIntro extends State<SlideIntro> {
   int page = 0;
   late LiquidController liquidController;
   late UpdateType updateType;
@@ -87,7 +87,7 @@ class _SplashScreen extends State<SplashScreen> {
               ),
               Text(
                 "INFORM",
-                style: SplashScreen.styleTitle,
+                style: SlideIntro.styleTitle,
               ),
               Padding(
                 padding: const EdgeInsets.all(50.0),
@@ -98,7 +98,7 @@ class _SplashScreen extends State<SplashScreen> {
               ),
               Text(
                 "Inform all the potholes in your local area to be fixed",
-                style: SplashScreen.styleDesc,
+                style: SlideIntro.styleDesc,
                 textAlign: TextAlign.center,
               ),
             ],
@@ -121,7 +121,7 @@ class _SplashScreen extends State<SplashScreen> {
               ),
               Text(
                 "MAPS",
-                style: SplashScreen.styleTitle,
+                style: SlideIntro.styleTitle,
               ),
               Padding(
                 padding: const EdgeInsets.all(50.0),
@@ -132,7 +132,7 @@ class _SplashScreen extends State<SplashScreen> {
               ),
               Text(
                 "Check on the map all the potholes registered, fixed and in progress",
-                style: SplashScreen.styleDesc,
+                style: SlideIntro.styleDesc,
                 textAlign: TextAlign.center,
               ),
             ],
@@ -155,7 +155,7 @@ class _SplashScreen extends State<SplashScreen> {
               ),
               Text(
                 "TRACK",
-                style: SplashScreen.styleTitle,
+                style: SlideIntro.styleTitle,
               ),
               Padding(
                 padding: const EdgeInsets.all(50.0),
@@ -166,7 +166,7 @@ class _SplashScreen extends State<SplashScreen> {
               ),
               Text(
                 "Track in realtime the progress of your complaint",
-                style: SplashScreen.styleDesc,
+                style: SlideIntro.styleDesc,
                 textAlign: TextAlign.center,
               ),
             ],

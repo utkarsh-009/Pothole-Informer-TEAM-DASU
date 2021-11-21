@@ -1,6 +1,6 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
+import 'package:pothole_informer/pages/google_sign_in.dart';
+import 'package:provider/provider.dart';
 
 class Homeheader extends StatelessWidget {
   const Homeheader({Key? key}) : super(key: key);
@@ -10,11 +10,22 @@ class Homeheader extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 30, left: 16, right: 10),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          TextButton(
+            onPressed: () {
+              final provider =
+                  Provider.of<GoogleSigInProvider>(context, listen: false);
+              provider.logout();
+            },
+            child: const Text(
+              "LOGOUT",
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.notifications,
               color: Colors.white,
               size: 27,

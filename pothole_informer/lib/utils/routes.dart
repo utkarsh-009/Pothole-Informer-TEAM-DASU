@@ -7,6 +7,7 @@ class MyRoutes {
   static String informRoute = '/inform';
   static String mapRoute = '/map';
   static String feedbackRoute = '/feedback';
-  static String sliderIntroRoute = 'slderIntro';
+  static String sliderIntroRoute = '/slderIntro';
   static String loginRoute = 'loginRoute';
+  static String myNavigator = '/HomePage';
 }
