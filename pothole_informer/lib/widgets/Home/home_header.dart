@@ -10,9 +10,9 @@ class Homeheader extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 30, left: 16, right: 10),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          TextButton(
+          /*TextButton(
             onPressed: () {
               final provider =
                   Provider.of<GoogleSigInProvider>(context, listen: false);
@@ -22,7 +22,7 @@ class Homeheader extends StatelessWidget {
               "LOGOUT",
               style: TextStyle(color: Colors.white),
             ),
-          ),
+          ),*/
           IconButton(
             onPressed: () {},
             icon: const Icon(
