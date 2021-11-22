@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:pothole_informer/pages/HomeNavs/feedback.dart';
 import 'package:pothole_informer/pages/HomeNavs/home_inform.dart';
 import 'package:pothole_informer/pages/HomeNavs/maps.dart';
+import 'package:pothole_informer/pages/HomeNavs/stats.dart';
 import 'package:pothole_informer/pages/authenticator.dart';
 import 'package:pothole_informer/pages/google_sign_in.dart';
 import 'package:pothole_informer/pages/slide_intro.dart';
@@ -62,6 +63,7 @@ class MyApp extends StatelessWidget {
             MyRoutes.sliderIntroRoute: (context) => SlideIntro(),
             MyRoutes.loginRoute: (context) => LoginPage(),
             MyRoutes.myNavigator: (context) => HomePage(),
+            MyRoutes.statsPage: (context) => Stats(),
           },
         ),
       );

@@ -24,30 +24,47 @@ class _NavigationBarState extends State<NavigationBar> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        navigationIcons(
-            FontAwesomeIcons.home, 0, currentIndex, MyRoutes.userHomeRoute),
-        navigationIcons(
-            FontAwesomeIcons.search, 1, currentIndex, MyRoutes.informRoute),
-        navigationIcons(
-            FontAwesomeIcons.mapMarker, 2, currentIndex, MyRoutes.mapRoute),
+        navigationIcons(FontAwesomeIcons.home, 0, currentIndex,
+            MyRoutes.userHomeRoute, "Home"),
+        navigationIcons(FontAwesomeIcons.infoCircle, 1, currentIndex,
+            MyRoutes.informRoute, "Inform"),
+        navigationIcons(FontAwesomeIcons.mapMarker, 2, currentIndex,
+            MyRoutes.mapRoute, "Maps"),
+        navigationIcons(FontAwesomeIcons.bars, 3, currentIndex,
+            MyRoutes.statsPage, "Stats"),
       ],
     );
   }
 
-  navigationIcons(IconData icon, int index, int selectedIndex, String route) {
+  navigationIcons(
+      IconData icon, int index, int selectedIndex, String route, String name) {
     return Expanded(
       child: Container(
-        child: IconButton(
-          icon: FaIcon(icon,
-              color: selectedIndex == index ? Colors.black : Colors.grey),
-          onPressed: () {
-            if (selectedIndex != index) Navigator.pushNamed(context, route);
-          },
+        padding: EdgeInsets.only(bottom: 2),
+        height: 51,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            IconButton(
+              constraints: BoxConstraints(maxHeight: 33),
+              padding: EdgeInsets.all(8),
+              icon: FaIcon(icon,
+                  size: 20,
+                  color: selectedIndex == index ? Colors.black : Colors.grey),
+              onPressed: () {
+                if (selectedIndex != index) Navigator.pushNamed(context, route);
+              },
+            ),
+            Text(
+              name,
+              style: TextStyle(fontSize: 12),
+            )
+          ],
         ),
         decoration: selectedIndex == index
             ? BoxDecoration(
                 border: const Border(
-                    bottom: BorderSide(width: 2, color: Colors.deepPurple)),
+                    bottom: BorderSide(width: 1.5, color: Colors.deepPurple)),
                 gradient: LinearGradient(
                   colors: [
                     Colors.purple.withOpacity(0.3),
@@ -62,44 +79,3 @@ class _NavigationBarState extends State<NavigationBar> {
     );
   }
 }
-
-/*
-class navigationIcons extends StatefulWidget {
-  const navigationIcons({
-    Key? key, required int index, selectedIndex, required IconData icon, required String route,
-  }) : super(key: key);
-
-  @override
-  State<navigationIcons> createState() => _navigationIconsState(icon:icon,);
-}
-
-class _navigationIconsState extends State<navigationIcons> {
-  @override
-  final IconData icon;
-  final int selectedIndex;
-  final int index;
-  final String route;
-
-  _navigationIconsState(this.icon, this.selectedIndex, this.index, this.route);
-
-  Widget build(BuildContext context) {
-    bool counter = false;
-    return Expanded(
-      child: Container(
-          child: IconButton(
-            icon: FaIcon(
-              icon,
-              color: const Color.fromRGBO(113, 122, 106, 1),
-            ),
-            onPressed: () {
-              if (selectedIndex == index) Navigator.pushNamed(context, route);
-              setState(() {
-                counter = true;
-              });
-            },
-          ),
-          color: counter ? Colors.green : Colors.white),
-    );
-  }
-}
-*/

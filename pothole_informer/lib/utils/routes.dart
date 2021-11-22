@@ -10,4 +10,5 @@ class MyRoutes {
   static String sliderIntroRoute = '/slderIntro';
   static String loginRoute = 'loginRoute';
   static String myNavigator = '/HomePage';
+  static String statsPage = '/statsPage';
 }
