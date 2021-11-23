@@ -27,9 +27,9 @@ class CustomGrid extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: CustomGridTile(
-                          image: Items[r][c].image,
-                          text: Items[r][c].text,
-                          route: Items[r][c].route,
+                          image: items[r][c].image,
+                          text: items[r][c].text,
+                          route: items[r][c].route,
                         ),
                       ),
                     );

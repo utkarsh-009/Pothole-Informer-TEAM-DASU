@@ -11,4 +11,6 @@ class MyRoutes {
   static String loginRoute = 'loginRoute';
   static String myNavigator = '/HomePage';
   static String statsPage = '/statsPage';
+  static String aboutPage = '/aboutPage';
+  static String trackerRoute = '/trackerPage';
 }
