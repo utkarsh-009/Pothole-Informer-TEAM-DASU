@@ -1,9 +1,11 @@
 class MyRoutes {
   static String firstPageRoute = '/firstpage';
   static String userLoginRoute = '/userLogin';
+  static String googleUserLogin = '/googleUserLogin';
   static String adminLoginRoute = '/adminLogin';
   static String userHomeRoute = '/userHome';
   static String adminHomeRoute = '/adminHome';
+  static String userPage = '/userPage';
 
   static String informRoute = '/inform';
   static String mapRoute = '/map';
@@ -11,7 +13,5 @@ class MyRoutes {
   static String trackerRoute = '/tracker';
   static String statsRoute = '/stats';
   static String aboutRoute = '/about';
-
-    static String sliderIntroRoute = '/slderIntro';
-
+  static String sliderIntroRoute = '/slderIntro';
 }

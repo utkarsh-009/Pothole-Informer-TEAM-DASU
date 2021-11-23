@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pothole_informer_app/utils/widgets/themes.dart';
+import 'package:pothole_informer_app/utils/themes.dart';
 
 class AdminHomePage extends StatelessWidget {
   const AdminHomePage({Key? key}) : super(key: key);

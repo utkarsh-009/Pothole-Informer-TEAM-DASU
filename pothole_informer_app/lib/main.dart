@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:pothole_informer_app/pages/Home%20Navs/about.dart';
+import 'package:pothole_informer_app/pages/Home%20Navs/feedback.dart';
+import 'package:pothole_informer_app/pages/Home%20Navs/home_inform.dart';
+import 'package:pothole_informer_app/pages/Home%20Navs/maps.dart';
+import 'package:pothole_informer_app/pages/Home%20Navs/stats.dart';
+import 'package:pothole_informer_app/pages/Home%20Navs/tracker.dart';
 import 'package:pothole_informer_app/pages/admin_homepage.dart';
 import 'package:pothole_informer_app/pages/admin_login_page.dart';
 import 'package:pothole_informer_app/pages/first_page.dart';
+import 'package:pothole_informer_app/pages/slide_intro.dart';
 import 'package:pothole_informer_app/pages/user_homepage.dart';
 import 'package:pothole_informer_app/pages/user_login_page.dart';
 import 'package:pothole_informer_app/routes.dart';
@@ -24,34 +31,38 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => GoogleSignInProvider(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: AnimatedSplashScreen(
-          splash: Image.asset(
-            'assets/images/pothole_splash.png',
-            height: 200,
-            width: 100,
-          ),
-          splashIconSize: double.infinity,
-          nextScreen: FirstPage(),
-          splashTransition: SplashTransition.fadeTransition,
-          backgroundColor: Colors.deepPurple,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: AnimatedSplashScreen(
+        splash: Image.asset(
+          'assets/images/pothole_splash.png',
+          height: 200,
+          width: 100,
         ),
-        theme: ThemeData(
-          primarySwatch: Colors.deepPurple,
-          fontFamily: GoogleFonts.poppins().fontFamily, //Adding google font
-        ),
-        // initialRoute: '/firstpage',
-        routes: {
-          MyRoutes.firstPageRoute: (context) => FirstPage(),
-          MyRoutes.userLoginRoute: (context) => UserLogin(),
-          MyRoutes.adminLoginRoute: (context) => AdminLogin(),
-          MyRoutes.userHomeRoute: (context) => UserHomePage(),
-          MyRoutes.adminHomeRoute: (context) => AdminHomePage(),
-        },
+        splashIconSize: double.infinity,
+        nextScreen: FirstPage(),
+        splashTransition: SplashTransition.fadeTransition,
+        backgroundColor: Colors.deepPurple,
       ),
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+        fontFamily: GoogleFonts.poppins().fontFamily, //Adding google font
+      ),
+      // initialRoute: '/firstpage',
+      routes: {
+        MyRoutes.firstPageRoute: (context) => FirstPage(),
+        MyRoutes.userLoginRoute: (context) => UserLogin(),
+        MyRoutes.adminLoginRoute: (context) => AdminLogin(),
+        MyRoutes.userHomeRoute: (context) => UserHomePage(),
+        MyRoutes.adminHomeRoute: (context) => AdminHomePage(),
+        MyRoutes.informRoute: (context) => InformPage(),
+        MyRoutes.mapRoute: (context) => MapPage(),
+        MyRoutes.feedbackRoute: (context) => FeedbackPage(),
+        MyRoutes.trackerRoute: (context) => TrackerPage(),
+        MyRoutes.statsRoute: (context) => StatsPage(),
+        MyRoutes.aboutRoute: (context) => AboutPage(),
+        MyRoutes.sliderIntroRoute: (context) => SlideIntro(),
+      },
     );
   }
 }

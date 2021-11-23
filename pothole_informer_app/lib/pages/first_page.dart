@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pothole_informer_app/routes.dart';
-import 'package:pothole_informer_app/utils/widgets/themes.dart';
+import 'package:pothole_informer_app/utils/themes.dart';
 
 class FirstPage extends StatelessWidget {
   const FirstPage({Key? key}) : super(key: key);

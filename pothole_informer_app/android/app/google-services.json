@@ -51,6 +51,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "477328598178-gigkeehf8gr4p8hi81sfgei60bme7pkd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pothole_informer_app",
+            "certificate_hash": "9035d9ab3ce56b765d5245e1813c0acbb593d98c"
+          }
+        },
+        {
           "client_id": "477328598178-1fsoebr164q99fl0i002oqdtde8jv5nl.apps.googleusercontent.com",
           "client_type": 3
         }

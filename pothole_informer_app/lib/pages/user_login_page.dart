@@ -1,7 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:pothole_informer_app/main.dart';
-import 'package:pothole_informer_app/utils/widgets/themes.dart';
+import 'package:pothole_informer_app/pages/user_homepage.dart';
+import 'package:pothole_informer_app/utils/themes.dart';
 import 'package:provider/provider.dart';
 import 'package:pothole_informer_app/firebase/authentication/google_sign_in.dart';
 import '../routes.dart';
@@ -168,12 +169,19 @@ class _UserLoginState extends State<UserLogin> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   GestureDetector(
-                    onTap: () {
+                    onTap: () async {
                       print("Logged in with Google");
-                      final provider = Provider.of<GoogleSignInProvider>(
-                          context,
-                          listen: false);
-                      provider.googleLogin();
+                      signInWithGoogle().then((result) {
+                        if (result != null) {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return UserHomePage();
+                              },
+                            ),
+                          );
+                        }
+                      });
                     },
                     child: Container(
                       height: 60,
