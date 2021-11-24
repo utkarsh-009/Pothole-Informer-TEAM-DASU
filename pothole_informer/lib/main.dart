@@ -4,7 +4,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:pothole_informer/pages/HomeNavs/about.dart';
 import 'package:pothole_informer/pages/HomeNavs/feedback.dart';
-import 'package:pothole_informer/pages/HomeNavs/home_inform.dart';
+import 'package:pothole_informer/pages/HomeNavs/Inform/home_inform.dart';
 import 'package:pothole_informer/pages/HomeNavs/maps.dart';
 import 'package:pothole_informer/pages/HomeNavs/stats.dart';
 import 'package:pothole_informer/pages/HomeNavs/tracker.dart';

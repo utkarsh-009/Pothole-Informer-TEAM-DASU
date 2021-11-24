@@ -20,9 +20,15 @@ class UserHomePage extends StatelessWidget {
           Scaffold(
             backgroundColor: Color.fromRGBO(0, 0, 0, 0),
             appBar: AppBar(
-              backgroundColor: Color.fromRGBO(255, 255, 255, 0),
+              backgroundColor: Color.fromRGBO(23, 2, 51, 0),
               actions: [
-                Icon(Icons.notifications),
+                Padding(
+                  padding: const EdgeInsets.only(right: 16),
+                  child: Icon(
+                    Icons.notifications,
+                    size: 26,
+                  ),
+                ),
               ],
             ),
             body: Column(
