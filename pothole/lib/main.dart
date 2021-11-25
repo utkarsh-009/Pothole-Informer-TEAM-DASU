@@ -3,6 +3,7 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:pothole/pages/HomeNavs/Inform/input_location_maps.dart';
 import 'package:pothole/pages/HomeNavs/about.dart';
 import 'package:pothole/pages/HomeNavs/stats.dart';
 import 'package:pothole/pages/HomeNavs/tracker.dart';
@@ -12,7 +13,7 @@ import 'package:provider/provider.dart';
 
 import './pages/google_user_login_page.dart';
 import './pages/HomeNavs/FeedBack.dart';
-import './pages/HomeNavs/home_inform.dart';
+import 'pages/HomeNavs/Inform/home_inform.dart';
 import './pages/HomeNavs/maps.dart';
 import './pages/admin_homepage.dart';
 import './pages/admin_login_page.dart';
