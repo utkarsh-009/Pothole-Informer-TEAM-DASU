@@ -4,7 +4,7 @@ import 'package:pothole_informer_app/main.dart';
 import 'package:pothole_informer_app/pages/user_homepage.dart';
 import 'package:pothole_informer_app/utils/themes.dart';
 import 'package:provider/provider.dart';
-import 'package:pothole_informer_app/firebase/authentication/google_sign_in.dart';
+import 'package:pothole_informer_app/provider/authentication/google_sign_in.dart';
 import '../routes.dart';
 
 class UserLogin extends StatefulWidget {

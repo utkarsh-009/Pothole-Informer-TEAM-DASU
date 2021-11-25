@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:pothole_informer_app/firebase/authentication/google_sign_in.dart';
+import 'package:pothole_informer_app/provider/authentication/google_sign_in.dart';
 import 'package:pothole_informer_app/models/grid_items.dart';
 import 'package:pothole_informer_app/pages/user_login_page.dart';
 import '../../../routes.dart';
