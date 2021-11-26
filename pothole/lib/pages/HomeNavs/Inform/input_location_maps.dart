@@ -42,8 +42,6 @@ class _InputLocationState extends State<InputLocation> {
             Marker(
               markerId: MarkerId("id 1"),
               position: location,
-              infoWindow:
-                  InfoWindow(title: "Pothole", snippet: "Pothole here!"),
               icon: BlueIcon,
             ),
           );
