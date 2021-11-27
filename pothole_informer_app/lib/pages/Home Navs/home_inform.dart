@@ -38,15 +38,18 @@ class _InformPageState extends State<InformPage> {
               SizedBox(
                 height: 20,
               ),
+              //Defining Stepper widget and its buttons (Continue, Cancel button)
               Stepper(
                 steps: _mySteps(),
                 currentStep: this._currentStep,
                 physics: NeverScrollableScrollPhysics(),
                 onStepTapped: (step) {
+                  //To get any step when directly tapped
                   setState(() {
                     this._currentStep = step;
                   });
                 },
+                //Continue Button
                 onStepContinue: () {
                   setState(() {
                     if (this._currentStep < this._mySteps().length - 1) {
@@ -57,6 +60,7 @@ class _InformPageState extends State<InformPage> {
                     }
                   });
                 },
+                //Cancel Button
                 onStepCancel: () {
                   setState(() {
                     if (this._currentStep > 0) {
@@ -114,6 +118,7 @@ class _InformPageState extends State<InformPage> {
     );
   }
 
+//Defining the content inside each step
   List<Step> _mySteps() {
     List<Step> _steps = [
       Step(
@@ -201,6 +206,7 @@ class _InformPageState extends State<InformPage> {
   }
 }
 
+//For Terms & Condition checkerbox
 class Checker extends StatefulWidget {
   const Checker({Key? key}) : super(key: key);
 
