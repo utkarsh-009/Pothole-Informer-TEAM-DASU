@@ -15,7 +15,6 @@ class InputLocation extends StatefulWidget {
 class _InputLocationState extends State<InputLocation> {
   late BitmapDescriptor BlueIcon;
   LatLng location;
-  LatLng potholeLocation = LatLng(19.031, 73.014);
 
   _InputLocationState(this.location);
 
@@ -56,7 +55,7 @@ class _InputLocationState extends State<InputLocation> {
         actions: [
           TextButton(
             onPressed: () {
-              Navigator.pop(context, potholeLocation);
+              Navigator.pop(context, location);
             },
             child: Text(
               "Confirm Location",
@@ -75,8 +74,8 @@ class _InputLocationState extends State<InputLocation> {
           target: location,
           zoom: 15,
         ),
-        onTap: (location) {
-          potholeLocation = location;
+        onTap: (position) {
+          location = position;
           _markers.clear();
           _markers.add(
             Marker(

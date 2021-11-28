@@ -1,16 +1,50 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_single_cascade_in_expression_statements
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:pothole/pages/HomeNavs/Inform/input_location_maps.dart';
-import 'package:pothole/utils/routes.dart';
 
-class FormPage extends StatelessWidget {
+class FormPage extends StatefulWidget {
+  @override
+  State<FormPage> createState() => _FormPageState();
+}
+
+class _FormPageState extends State<FormPage> {
+  final _personalDetailsFormKey = GlobalKey<FormState>();
+  final _potholeDetailsFormKey = GlobalKey<FormState>();
+  late Map<String, dynamic> potholeData;
+  var phone;
+  var address;
+  var description;
+  final user = FirebaseAuth.instance.currentUser!;
+  LatLng potholeLocation = LatLng(19.031, 73.014);
+
+  moveToHome() async {
+    if (_personalDetailsFormKey.currentState!.validate() &&
+        _potholeDetailsFormKey.currentState!.validate()) {
+      addData();
+      Navigator.pop(context);
+    }
+  }
+
+  void addData() {
+    potholeData = {
+      "Phone Number": phone,
+      "Latitude": potholeLocation.latitude,
+      "Longitude": potholeLocation.longitude,
+      "Address": address,
+      "Description": description,
+    };
+    CollectionReference collectionReference =
+        FirebaseFirestore.instance.collection(user.uid.toString());
+    collectionReference.add(potholeData);
+  }
+
   @override
   Widget build(BuildContext context) {
-    LatLng potholeLocation = LatLng(19.031, 73.014);
-    final locationController = TextEditingController();
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -36,6 +70,7 @@ class FormPage extends StatelessWidget {
                 height: 20,
               ),
               Form(
+                key: _personalDetailsFormKey,
                 child: Card(
                   elevation: 3,
                   shape: RoundedRectangleBorder(
@@ -87,6 +122,19 @@ class FormPage extends StatelessWidget {
                             hintText: "Phone number",
                             labelText: "Enter Phone Number",
                           ),
+                          validator: (String? value) {
+                            if (value != null && value.isEmpty) {
+                              return "Please enter your phone number";
+                            } else if (value != null && value.length != 10) {
+                              return "Phone number should be of 10 digits";
+                            }
+                            return null;
+                          },
+                          onChanged: (phoneNumber) {
+                            setState(() {
+                              phone = phoneNumber;
+                            });
+                          },
                         ),
                       ],
                     ),
@@ -97,6 +145,7 @@ class FormPage extends StatelessWidget {
                 height: 30,
               ),
               Form(
+                key: _potholeDetailsFormKey,
                 child: Card(
                   elevation: 3,
                   shape: RoundedRectangleBorder(
@@ -136,20 +185,8 @@ class FormPage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        TextField(
-                          cursorHeight: 5,
-                          decoration: const InputDecoration(
-                            contentPadding: EdgeInsets.all(16),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(8),
-                              ),
-                            ),
-                            hintText: "Coordinates",
-                            labelText: "Enter Coordinates",
-                          ),
-                          controller: locationController,
-                        ),
+                        Text(
+                            "${potholeLocation.latitude}, ${potholeLocation.longitude}"),
                         TextButton(
                           onPressed: () async {
                             potholeLocation = await Navigator.push(
@@ -161,17 +198,7 @@ class FormPage extends StatelessWidget {
                                 ),
                               ),
                             ) as LatLng;
-
-                            locationController.value = TextEditingValue(
-                              text:
-                                  "${potholeLocation.latitude}, ${potholeLocation.longitude}",
-                              selection: TextSelection.fromPosition(
-                                TextPosition(
-                                    offset:
-                                        "${potholeLocation.latitude}, ${potholeLocation.longitude}"
-                                            .length),
-                              ),
-                            );
+                            setState(() {});
                           },
                           child: Text(
                             "Mark location",
@@ -209,6 +236,17 @@ class FormPage extends StatelessWidget {
                             hintText: "Location",
                             labelText: "Enter Address",
                           ),
+                          validator: (String? value) {
+                            if (value != null && value.isEmpty) {
+                              return "Please enter pothole address";
+                            }
+                            return null;
+                          },
+                          onChanged: (location) {
+                            setState(() {
+                              address = location;
+                            });
+                          },
                         ),
                         Padding(
                           padding: const EdgeInsets.fromLTRB(0, 18, 0, 14),
@@ -232,12 +270,22 @@ class FormPage extends StatelessWidget {
                             hintText: "Description",
                             labelText: "Enter Description",
                           ),
+                          onChanged: (desc) {
+                            setState(() {
+                              description = desc;
+                            });
+                          },
                         ),
                       ],
                     ),
                   ),
                 ),
               ),
+              ElevatedButton(
+                  onPressed: () {
+                    moveToHome();
+                  },
+                  child: Text("Submit"))
             ],
           ),
         ),
