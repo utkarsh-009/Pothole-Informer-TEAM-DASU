@@ -1,9 +1,13 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
+import 'dart:io';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:pothole/pages/HomeNavs/Inform/input_location_maps.dart';
 
 class InformPage extends StatefulWidget {
@@ -23,6 +27,8 @@ class _InformPageState extends State<InformPage> {
   TextEditingController address_data = TextEditingController();
   TextEditingController description_data = TextEditingController();
   LatLng potholeLocation = LatLng(19.031, 73.014);
+  XFile? _image;
+  String uploadCode = DateTime.now().hashCode.toString();
   final user = FirebaseAuth.instance.currentUser!;
 
   @override
@@ -92,7 +98,7 @@ class _InformPageState extends State<InformPage> {
                     height: 20,
                   ),
                   ElevatedButton(
-                    onPressed: () {
+                    onPressed: () async {
                       if (_personalDetailsFormKey.currentState!.validate() &&
                           _potholeDetailsFormKey.currentState!.validate()) {
                         Map<String, dynamic> data = {
@@ -102,10 +108,11 @@ class _InformPageState extends State<InformPage> {
                           "Latitude": potholeLocation.latitude,
                           "Longitude": potholeLocation.longitude,
                           "Description of Pothole": description_data.text,
+                          "image url": "Images/$uploadCode",
                         };
                         FirebaseFirestore.instance
                             .collection("Pothole Details")
-                            .doc(DateTime.now().hashCode.toString())
+                            .doc(uploadCode)
                             .set(data);
                         Navigator.pop(context);
                       }
@@ -256,7 +263,69 @@ class _InformPageState extends State<InformPage> {
           style: TextStyle(fontSize: 20),
         ),
         content: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            showModalBottomSheet(
+              context: context,
+              builder: (builder) => Container(
+                height: 150,
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      "Select Pothole Image",
+                      style: TextStyle(fontSize: 22),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        TextButton.icon(
+                          onPressed: () async {
+                            Navigator.pop(context);
+                            var imagefile = await ImagePicker()
+                                .pickImage(source: ImageSource.camera);
+                            if (imagefile != null) {
+                              setState(() {
+                                _image = imagefile;
+                              });
+                              await FirebaseStorage.instance
+                                  .ref("Images/$uploadCode")
+                                  .putFile(File(_image!.path));
+                            }
+                          },
+                          icon: Icon(
+                            Icons.camera,
+                            color: Colors.black,
+                          ),
+                          label: Text("Camera"),
+                        ),
+                        TextButton.icon(
+                          onPressed: () async {
+                            Navigator.pop(context);
+                            var imagefile = await ImagePicker()
+                                .pickImage(source: ImageSource.gallery);
+                            if (imagefile != null) {
+                              setState(() {
+                                _image = imagefile;
+                              });
+                              await FirebaseStorage.instance
+                                  .ref("Images/$uploadCode")
+                                  .putFile(File(_image!.path));
+                            }
+                          },
+                          icon: Icon(
+                            Icons.image,
+                            color: Colors.black,
+                          ),
+                          label: Text("Gallery"),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            );
+          },
           child: Text(
             "Click here to upload image",
             style: TextStyle(

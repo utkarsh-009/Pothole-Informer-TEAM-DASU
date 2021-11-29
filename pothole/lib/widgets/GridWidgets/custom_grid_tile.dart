@@ -36,7 +36,10 @@ class _CustomGridTileState extends State<CustomGridTile> {
           await Future.delayed(Duration(milliseconds: 200));
           elv = 5;
           setState(() {});
-          Navigator.pushNamed(context, widget.route);
+          if (widget.text == "About")
+            showAboutDialog(context: context);
+          else
+            Navigator.pushNamed(context, widget.route);
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
