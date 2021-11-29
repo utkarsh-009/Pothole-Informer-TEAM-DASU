@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -14,6 +15,8 @@ class _MapPageState extends State<MapPage> {
   late BitmapDescriptor RedIcon;
   late BitmapDescriptor YellowIcon;
   late BitmapDescriptor BlueIcon;
+  List<LatLng> locations = [];
+  final Set<Marker> _markers = {};
 
   @override
   void initState() {
@@ -30,43 +33,32 @@ class _MapPageState extends State<MapPage> {
         ImageConfiguration(), "assets/images/BlueMarker.png");
   }
 
-  final Set<Marker> _markers = {};
-
   @override
   Widget build(BuildContext context) {
     void _onMapCreated(GoogleMapController controller) {
       controller.setMapStyle(Utils.mapStyle);
-      setState(
-        () {
-          _markers.add(
-            Marker(
-              markerId: MarkerId("id 1"),
-              position: LatLng(19.031, 73.014),
-              infoWindow:
-                  InfoWindow(title: "Pothole", snippet: "Pothole here!"),
-              icon: BlueIcon,
-            ),
-          );
-          _markers.add(
-            Marker(
-              markerId: MarkerId("id 2"),
-              position: LatLng(19.035, 73.011),
-              infoWindow:
-                  InfoWindow(title: "Pothole", snippet: "Pothole here!"),
-              icon: RedIcon,
-            ),
-          );
-          _markers.add(
-            Marker(
-              markerId: MarkerId("id 3"),
-              position: LatLng(19.0339, 73.0196),
-              infoWindow:
-                  InfoWindow(title: "Pothole", snippet: "Pothole here!"),
-              icon: YellowIcon,
-            ),
-          );
-        },
-      );
+      FirebaseFirestore.instance
+          .collection("Pothole Details")
+          .snapshots()
+          .listen((event) {
+        setState(() {
+          for (int index = 0; index < event.docs.length; index++) {
+            _markers.add(
+              Marker(
+                markerId: MarkerId(index.toString()),
+                position: LatLng(event.docs[index].data()['Latitude'],
+                    event.docs[index].data()['Longitude']),
+                infoWindow: InfoWindow(
+                    title: "Pothole",
+                    snippet:
+                        event.docs[index].data()['Description of Pothole']),
+                icon: BlueIcon,
+              ),
+            );
+          }
+        });
+      });
+      setState(() {});
     }
 
     return Scaffold(
