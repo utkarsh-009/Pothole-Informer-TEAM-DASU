@@ -47,19 +47,9 @@ class _AdminHomePageState extends State<AdminHomePage> {
           return Padding(
             padding: const EdgeInsets.all(32.0),
             child: Card(
-              child: FutureBuilder(
-                future: downloadURL(imagePaths[index]),
-                builder:
-                    (BuildContext context, AsyncSnapshot<String> snapshot) {
-                  if (snapshot.connectionState == ConnectionState.done &&
-                      snapshot.hasData) {
-                    return Container(
-                      height: 500,
-                      child: Image.network(snapshot.data!),
-                    );
-                  }
-                  return Container();
-                },
+              child: Container(
+                height: 500,
+                child: Image.network(imagePaths[index]),
               ),
             ),
           );

@@ -28,8 +28,16 @@ class _InformPageState extends State<InformPage> {
   TextEditingController description_data = TextEditingController();
   LatLng potholeLocation = LatLng(19.031, 73.014);
   XFile? _image;
+  String imageURL =
+      "https://st4.depositphotos.com/14953852/22772/v/600/depositphotos_227725020-stock-illustration-image-available-icon-flat-vector.jpg";
   String uploadCode = DateTime.now().hashCode.toString();
   final user = FirebaseAuth.instance.currentUser!;
+
+  Future<String> downloadURL(String imageURL) async {
+    String downloadUrl =
+        await FirebaseStorage.instance.ref(imageURL).getDownloadURL();
+    return downloadUrl;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -101,6 +109,7 @@ class _InformPageState extends State<InformPage> {
                     onPressed: () async {
                       if (_personalDetailsFormKey.currentState!.validate() &&
                           _potholeDetailsFormKey.currentState!.validate()) {
+                        imageURL = await downloadURL("Images/$uploadCode");
                         Map<String, dynamic> data = {
                           "Phone No:": phone_no_data.text,
                           "City": city_data.text,
@@ -108,7 +117,7 @@ class _InformPageState extends State<InformPage> {
                           "Latitude": potholeLocation.latitude,
                           "Longitude": potholeLocation.longitude,
                           "Description of Pothole": description_data.text,
-                          "image url": "Images/$uploadCode",
+                          "image url": imageURL,
                         };
                         FirebaseFirestore.instance
                             .collection("Pothole Details")
