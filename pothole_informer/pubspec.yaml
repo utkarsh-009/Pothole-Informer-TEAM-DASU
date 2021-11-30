@@ -44,7 +44,15 @@ dependencies:
   google_sign_in: ^5.0.3
   provider: ^6.0.0
   font_awesome_flutter: ^9.2.0
-
+  google_maps_flutter: ^2.1.1
+  cloud_firestore: ^3.1.0
+  geocoding: ^2.0.1
+  location: ^4.3.0
+  map_picker: ^0.0.3
+  image_picker: ^0.8.4+4
+  firebase_storage: ^10.1.0
+  modal_progress_hud_nsn: ^0.1.0-nullsafety-1
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

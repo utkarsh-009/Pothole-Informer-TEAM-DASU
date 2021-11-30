@@ -5,7 +5,6 @@ import 'package:pothole_informer/layout/back.dart';
 import 'package:pothole_informer/pages/HomeNavs/Drawer/drawer.dart';
 import 'package:pothole_informer/widgets/GridWidgets/custom_grid.dart';
 import 'package:pothole_informer/widgets/Home/home_user_info.dart';
-import 'package:pothole_informer/widgets/Home/navigation_bar.dart';
 import 'package:pothole_informer/widgets/Home/user_stats.dart';
 
 class UserHomePage extends StatelessWidget {
@@ -54,9 +53,6 @@ class UserHomePage extends StatelessWidget {
               ],
             ),
             drawer: MyDrawer(),
-            bottomNavigationBar: NavigationBar(
-              currentIndex: 0,
-            ),
           ),
         ],
       ),

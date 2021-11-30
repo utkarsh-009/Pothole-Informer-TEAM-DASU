@@ -1,9 +1,48 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_single_cascade_in_expression_statements
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pothole_informer/utils/themes.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class FormPage extends StatelessWidget {
-  const FormPage({Key? key}) : super(key: key);
+import 'input_location_maps.dart';
+
+class FormPage extends StatefulWidget {
+  @override
+  State<FormPage> createState() => _FormPageState();
+}
+
+class _FormPageState extends State<FormPage> {
+  final _personalDetailsFormKey = GlobalKey<FormState>();
+  final _potholeDetailsFormKey = GlobalKey<FormState>();
+  late Map<String, dynamic> potholeData;
+  var phone;
+  var address;
+  var description;
+  final user = FirebaseAuth.instance.currentUser!;
+  LatLng potholeLocation = LatLng(19.031, 73.014);
+
+  moveToHome() async {
+    if (_personalDetailsFormKey.currentState!.validate() &&
+        _potholeDetailsFormKey.currentState!.validate()) {
+      addData();
+      Navigator.pop(context);
+    }
+  }
+
+  void addData() {
+    potholeData = {
+      "Phone Number": phone,
+      "Latitude": potholeLocation.latitude,
+      "Longitude": potholeLocation.longitude,
+      "Address": address,
+      "Description": description,
+    };
+    CollectionReference collectionReference =
+        FirebaseFirestore.instance.collection(user.uid.toString());
+    collectionReference.add(potholeData);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +71,7 @@ class FormPage extends StatelessWidget {
                 height: 20,
               ),
               Form(
+                key: _personalDetailsFormKey,
                 child: Card(
                   elevation: 3,
                   shape: RoundedRectangleBorder(
@@ -48,34 +88,33 @@ class FormPage extends StatelessWidget {
                             child: Text(
                               "PERSONAL DETAILS",
                               style: TextStyle(
-                                  fontSize: 18,
-                                  color: MyThemes.darkBluishColor,
-                                  fontWeight: FontWeight.bold),
+                                  fontSize: 18, fontWeight: FontWeight.bold),
                             ),
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.fromLTRB(0, 18, 0, 14),
-                          child: Text(
-                            "Contact Info: ",
-                            style: TextStyle(
-                                fontSize: 16,
-                                color: MyThemes.darkBluishColor,
-                                fontWeight: FontWeight.bold),
+                          child: Row(
+                            children: [
+                              Text(
+                                "Contact Info: ",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                "*",
+                                style: TextStyle(
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              )
+                            ],
                           ),
                         ),
                         TextFormField(
                           cursorHeight: 5,
                           decoration: const InputDecoration(
                             contentPadding: EdgeInsets.all(16),
-                            focusColor: Colors.red,
-                            counter: Text(
-                              "*Required",
-                              style: TextStyle(
-                                color: Colors.redAccent,
-                              ),
-                            ),
-                            disabledBorder: OutlineInputBorder(),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.all(
                                 Radius.circular(8),
@@ -84,6 +123,19 @@ class FormPage extends StatelessWidget {
                             hintText: "Phone number",
                             labelText: "Enter Phone Number",
                           ),
+                          validator: (String? value) {
+                            if (value != null && value.isEmpty) {
+                              return "Please enter your phone number";
+                            } else if (value != null && value.length != 10) {
+                              return "Phone number should be of 10 digits";
+                            }
+                            return null;
+                          },
+                          onChanged: (phoneNumber) {
+                            setState(() {
+                              phone = phoneNumber;
+                            });
+                          },
                         ),
                       ],
                     ),
@@ -94,6 +146,7 @@ class FormPage extends StatelessWidget {
                 height: 30,
               ),
               Form(
+                key: _potholeDetailsFormKey,
                 child: Card(
                   elevation: 3,
                   shape: RoundedRectangleBorder(
@@ -110,34 +163,72 @@ class FormPage extends StatelessWidget {
                             child: Text(
                               "POTHOLE DETAILS",
                               style: TextStyle(
-                                  fontSize: 18,
-                                  color: MyThemes.darkBluishColor,
-                                  fontWeight: FontWeight.bold),
+                                  fontSize: 18, fontWeight: FontWeight.bold),
                             ),
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.fromLTRB(0, 18, 0, 14),
+                          child: Row(
+                            children: [
+                              Text(
+                                "Location: ",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                "*",
+                                style: TextStyle(
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Text(
+                            "${potholeLocation.latitude}, ${potholeLocation.longitude}"),
+                        TextButton(
+                          onPressed: () async {
+                            potholeLocation = await Navigator.push(
+                              context,
+                              MaterialPageRoute<void>(
+                                builder: (BuildContext context) =>
+                                    InputLocation(
+                                  location: potholeLocation,
+                                ),
+                              ),
+                            ) as LatLng;
+                            setState(() {});
+                          },
                           child: Text(
-                            "Address: ",
-                            style: TextStyle(
-                                fontSize: 16,
-                                color: MyThemes.darkBluishColor,
-                                fontWeight: FontWeight.bold),
+                            "Mark location",
+                            style: TextStyle(fontSize: 16),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 18, 0, 14),
+                          child: Row(
+                            children: [
+                              Text(
+                                "Address: ",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                "*",
+                                style: TextStyle(
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              )
+                            ],
                           ),
                         ),
                         TextFormField(
                           cursorHeight: 5,
                           decoration: const InputDecoration(
                             contentPadding: EdgeInsets.all(16),
-                            focusColor: Colors.red,
-                            counter: Text(
-                              "*Required",
-                              style: TextStyle(
-                                color: Colors.redAccent,
-                              ),
-                            ),
-                            disabledBorder: OutlineInputBorder(),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.all(
                                 Radius.circular(8),
@@ -146,46 +237,24 @@ class FormPage extends StatelessWidget {
                             hintText: "Location",
                             labelText: "Enter Address",
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 18, 0, 14),
-                          child: Text(
-                            "Location: ",
-                            style: TextStyle(
-                                fontSize: 16,
-                                color: MyThemes.darkBluishColor,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        TextFormField(
-                          cursorHeight: 5,
-                          decoration: const InputDecoration(
-                            contentPadding: EdgeInsets.all(16),
-                            focusColor: Colors.red,
-                            counter: Text(
-                              "*Required",
-                              style: TextStyle(
-                                color: Colors.redAccent,
-                              ),
-                            ),
-                            disabledBorder: OutlineInputBorder(),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(8),
-                              ),
-                            ),
-                            hintText: "Cordinates",
-                            labelText: "Enter Cordinates",
-                          ),
+                          validator: (String? value) {
+                            if (value != null && value.isEmpty) {
+                              return "Please enter pothole address";
+                            }
+                            return null;
+                          },
+                          onChanged: (location) {
+                            setState(() {
+                              address = location;
+                            });
+                          },
                         ),
                         Padding(
                           padding: const EdgeInsets.fromLTRB(0, 18, 0, 14),
                           child: Text(
                             "Description: ",
                             style: TextStyle(
-                                fontSize: 16,
-                                color: MyThemes.darkBluishColor,
-                                fontWeight: FontWeight.bold),
+                                fontSize: 16, fontWeight: FontWeight.bold),
                           ),
                         ),
                         TextFormField(
@@ -202,12 +271,22 @@ class FormPage extends StatelessWidget {
                             hintText: "Description",
                             labelText: "Enter Description",
                           ),
+                          onChanged: (desc) {
+                            setState(() {
+                              description = desc;
+                            });
+                          },
                         ),
                       ],
                     ),
                   ),
                 ),
               ),
+              ElevatedButton(
+                  onPressed: () {
+                    moveToHome();
+                  },
+                  child: Text("Submit"))
             ],
           ),
         ),

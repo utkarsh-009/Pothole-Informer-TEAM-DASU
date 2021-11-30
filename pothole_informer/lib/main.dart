@@ -1,19 +1,20 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'package:pothole_informer/pages/HomeNavs/Inform/home_inform.dart';
+import 'package:pothole_informer/pages/HomeNavs/Maps/map_page.dart';
 import 'package:pothole_informer/pages/HomeNavs/about.dart';
 import 'package:pothole_informer/pages/HomeNavs/feedback.dart';
-import 'package:pothole_informer/pages/HomeNavs/Inform/home_inform.dart';
-import 'package:pothole_informer/pages/HomeNavs/maps.dart';
 import 'package:pothole_informer/pages/HomeNavs/stats.dart';
 import 'package:pothole_informer/pages/HomeNavs/tracker.dart';
 import 'package:pothole_informer/pages/authenticator.dart';
 import 'package:pothole_informer/pages/google_sign_in.dart';
-import 'package:pothole_informer/pages/slide_intro.dart';
 import 'package:pothole_informer/pages/login_page.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:provider/provider.dart';
+import 'package:pothole_informer/pages/slide_intro.dart';
 
 import './pages/admin_homepage.dart';
 import './pages/admin_login_page.dart';
@@ -60,7 +61,7 @@ class MyApp extends StatelessWidget {
             MyRoutes.userHomeRoute: (context) => UserHomePage(),
             MyRoutes.adminHomeRoute: (context) => AdminHomePage(),
             MyRoutes.informRoute: (context) => InformPage(),
-            MyRoutes.mapRoute: (context) => MapPage(),
+            MyRoutes.mapRoute: (context) => MapsPage(),
             MyRoutes.feedbackRoute: (context) => FeedbackPage(),
             MyRoutes.sliderIntroRoute: (context) => SlideIntro(),
             MyRoutes.loginRoute: (context) => LoginPage(),

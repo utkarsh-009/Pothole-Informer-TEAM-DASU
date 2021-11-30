@@ -3,17 +3,20 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class MapPage extends StatefulWidget {
-  const MapPage({Key? key}) : super(key: key);
+class InputLocation extends StatefulWidget {
+  final location;
+
+  const InputLocation({Key? key, required this.location}) : super(key: key);
 
   @override
-  State<MapPage> createState() => _MapPageState();
+  State<InputLocation> createState() => _InputLocationState(location);
 }
 
-class _MapPageState extends State<MapPage> {
-  late BitmapDescriptor RedIcon;
-  late BitmapDescriptor YellowIcon;
+class _InputLocationState extends State<InputLocation> {
   late BitmapDescriptor BlueIcon;
+  LatLng location;
+
+  _InputLocationState(this.location);
 
   @override
   void initState() {
@@ -22,10 +25,6 @@ class _MapPageState extends State<MapPage> {
   }
 
   void setCustomMarkerIcon() async {
-    RedIcon = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(), "assets/images/RedMarker.png");
-    YellowIcon = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(), "assets/images/YellowMarker.png");
     BlueIcon = await BitmapDescriptor.fromAssetImage(
         ImageConfiguration(), "assets/images/BlueMarker.png");
   }
@@ -41,28 +40,8 @@ class _MapPageState extends State<MapPage> {
           _markers.add(
             Marker(
               markerId: MarkerId("id 1"),
-              position: LatLng(19.031, 73.014),
-              infoWindow:
-                  InfoWindow(title: "Pothole", snippet: "Pothole here!"),
+              position: location,
               icon: BlueIcon,
-            ),
-          );
-          _markers.add(
-            Marker(
-              markerId: MarkerId("id 2"),
-              position: LatLng(19.035, 73.011),
-              infoWindow:
-                  InfoWindow(title: "Pothole", snippet: "Pothole here!"),
-              icon: RedIcon,
-            ),
-          );
-          _markers.add(
-            Marker(
-              markerId: MarkerId("id 3"),
-              position: LatLng(19.0339, 73.0196),
-              infoWindow:
-                  InfoWindow(title: "Pothole", snippet: "Pothole here!"),
-              icon: YellowIcon,
             ),
           );
         },
@@ -72,23 +51,51 @@ class _MapPageState extends State<MapPage> {
     return Scaffold(
       backgroundColor: Colors.deepPurple[50],
       appBar: AppBar(
-        title: Text("Maps"),
         backgroundColor: Colors.deepPurple[900],
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context, location);
+            },
+            child: Text(
+              "Confirm Location",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 15,
+              ),
+            ),
+          )
+        ],
       ),
       body: GoogleMap(
         markers: _markers,
         onMapCreated: _onMapCreated,
         initialCameraPosition: CameraPosition(
-          target: LatLng(19.0339, 73.0196),
+          target: location,
           zoom: 15,
         ),
+        onTap: (position) {
+          location = position;
+          _markers.clear();
+          _markers.add(
+            Marker(
+              markerId: MarkerId("id 1"),
+              position: location,
+              infoWindow:
+                  InfoWindow(title: "Pothole", snippet: "Pothole here!"),
+              icon: BlueIcon,
+            ),
+          );
+          setState(() {});
+        },
       ),
     );
   }
 }
 
 class Utils {
-  static String mapStyle = '''
+  static String mapStyle =
+      '''
       [
   {
     "featureType": "administrative",
@@ -121,7 +128,7 @@ class Utils {
     "elementType": "labels.icon",
     "stylers": [
       {
-        "visibility": "off"
+        "visibility": "on"
       }
     ]
   },
@@ -130,7 +137,7 @@ class Utils {
     "elementType": "labels",
     "stylers": [
       {
-        "visibility": "off"
+        "visibility": "on"
       }
     ]
   },
@@ -138,7 +145,7 @@ class Utils {
     "featureType": "transit",
     "stylers": [
       {
-        "visibility": "off"
+        "visibility": "on"
       }
     ]
   }
