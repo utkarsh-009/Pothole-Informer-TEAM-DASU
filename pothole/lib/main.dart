@@ -3,7 +3,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:pothole/pages/HomeNavs/Inform/input_location_maps.dart';
 import 'package:pothole/pages/HomeNavs/about.dart';
 import 'package:pothole/pages/HomeNavs/stats.dart';
 import 'package:pothole/pages/HomeNavs/tracker.dart';
@@ -41,14 +40,13 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: AnimatedSplashScreen(
           splash: Image.asset(
-            'assets/images/pothole_splash.png',
-            height: 200,
-            width: 100,
+            'assets/images/pothole_splash2.png',
+            height: 500,
           ),
           splashIconSize: double.infinity,
           nextScreen: FirstPage(),
           splashTransition: SplashTransition.fadeTransition,
-          backgroundColor: Colors.deepPurple,
+          backgroundColor: Color.fromRGBO(30, 0, 50, 1),
         ),
         theme: ThemeData(
           primarySwatch: Colors.deepPurple,
