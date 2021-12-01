@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -38,15 +40,14 @@ class _AdminHomePageState extends State<AdminHomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 20,
+              height: 18,
             ),
             ClipRRect(
               borderRadius: BorderRadius.circular(50),
               child: Container(
                 width: double.infinity,
-                color: Colors.blue,
                 padding:
-                    const EdgeInsets.symmetric(vertical: 16, horizontal: 30),
+                    const EdgeInsets.symmetric(vertical: 18, horizontal: 30),
                 child: Text(
                   "Admin Page",
                   style: TextStyle(
@@ -92,9 +93,9 @@ class PotholeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
       child: Card(
-        elevation: 6,
+        elevation: 8,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -105,7 +106,7 @@ class PotholeWidget extends StatelessWidget {
                 children: [
                   Positioned.fill(
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(18),
                       child: Image.network(
                         item["image url"],
                         fit: BoxFit.cover,
@@ -127,8 +128,8 @@ class PotholeWidget extends StatelessWidget {
                       height: 310,
                       decoration: BoxDecoration(
                         borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(20),
-                          bottomRight: Radius.circular(20),
+                          bottomLeft: Radius.circular(18),
+                          bottomRight: Radius.circular(18),
                         ),
                         gradient: LinearGradient(
                             colors: [
@@ -162,7 +163,7 @@ class PotholeWidget extends StatelessWidget {
           ],
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(18),
         ),
       ),
     );
