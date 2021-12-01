@@ -9,6 +9,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'input_location_maps.dart';
 
 class FormPage extends StatefulWidget {
+  const FormPage({Key? key}) : super(key: key);
+
   @override
   State<FormPage> createState() => _FormPageState();
 }
@@ -283,10 +285,11 @@ class _FormPageState extends State<FormPage> {
                 ),
               ),
               ElevatedButton(
-                  onPressed: () {
-                    moveToHome();
-                  },
-                  child: Text("Submit"))
+                onPressed: () {
+                  moveToHome();
+                },
+                child: Text("Submit"),
+              )
             ],
           ),
         ),
