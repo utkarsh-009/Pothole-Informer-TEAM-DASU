@@ -12,6 +12,6 @@ class MyRoutes {
   static String statsRoute = '/stats';
   static String aboutRoute = '/about';
 
-    static String sliderIntroRoute = '/slderIntro';
-
+  static String sliderIntroRoute = '/slderIntro';
+  static String imageUploadRoute = '/imageUpload';
 }

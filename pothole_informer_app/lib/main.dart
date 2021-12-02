@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:pothole_informer_app/pages/Home%20Navs/Inform/home_inform.dart';
 import 'package:pothole_informer_app/pages/Home%20Navs/about.dart';
 import 'package:pothole_informer_app/pages/Home%20Navs/feedback.dart';
-import 'package:pothole_informer_app/pages/Home%20Navs/home_inform.dart';
+import 'package:pothole_informer_app/pages/Home%20Navs/image_upload.dart';
 import 'package:pothole_informer_app/pages/Home%20Navs/maps.dart';
 import 'package:pothole_informer_app/pages/Home%20Navs/stats.dart';
 import 'package:pothole_informer_app/pages/Home%20Navs/tracker.dart';
@@ -25,6 +26,7 @@ Future<void> main() async {
   await Firebase.initializeApp();
 
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: MyApp(),
   ));
 }
@@ -65,6 +67,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.statsRoute: (context) => StatsPage(),
         MyRoutes.aboutRoute: (context) => AboutPage(),
         MyRoutes.sliderIntroRoute: (context) => SlideIntro(),
+        MyRoutes.imageUploadRoute: (context) => ImageUpload(),
       },
     );
   }

@@ -1,8 +1,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pothole_informer_app">
+  
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+
    <application
         android:label="pothole_informer_app"
+        android:requestLegacyExternalStorage="true"
         android:icon="@mipmap/ic_launcher">
+
+            <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyAunefOI4bO3lc52xcf2oj_icqMkaMuGX4"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
@@ -27,6 +37,7 @@
               android:name="io.flutter.embedding.android.SplashScreenDrawable"
               android:resource="@drawable/launch_background"
               />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

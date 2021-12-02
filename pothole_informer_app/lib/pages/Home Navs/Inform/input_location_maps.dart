@@ -1,22 +1,25 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class MapPage extends StatefulWidget {
-  const MapPage({Key? key}) : super(key: key);
+
+class InputLocation extends StatefulWidget {
+  final location;
+
+  const InputLocation({Key? key, required this.location}) : super(key: key);
 
   @override
-  State<MapPage> createState() => _MapPageState();
+  State<InputLocation> createState() => _InputLocationState(location);
 }
 
-class _MapPageState extends State<MapPage> {
-  late BitmapDescriptor RedIcon;
-  late BitmapDescriptor YellowIcon;
+class _InputLocationState extends State<InputLocation> {
   late BitmapDescriptor BlueIcon;
-  List<LatLng> locations = [];
-  final Set<Marker> _markers = {};
+  LatLng location;
+
+  _InputLocationState(this.location);
 
   @override
   void initState() {
@@ -25,55 +28,69 @@ class _MapPageState extends State<MapPage> {
   }
 
   void setCustomMarkerIcon() async {
-    RedIcon = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(), "assets/images/RedMarker.png");
-    YellowIcon = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(), "assets/images/YellowMarker.png");
     BlueIcon = await BitmapDescriptor.fromAssetImage(
         ImageConfiguration(), "assets/images/BlueMarker.png");
   }
+
+  final Set<Marker> _markers = {};
 
   @override
   Widget build(BuildContext context) {
     void _onMapCreated(GoogleMapController controller) {
       controller.setMapStyle(Utils.mapStyle);
-      FirebaseFirestore.instance
-          .collection("Pothole Details")
-          .snapshots()
-          .listen((event) {
-        setState(() {
-          for (int index = 0; index < event.docs.length; index++) {
-            _markers.add(
-              Marker(
-                markerId: MarkerId(index.toString()),
-                position: LatLng(event.docs[index].data()['Latitude'],
-                    event.docs[index].data()['Longitude']),
-                infoWindow: InfoWindow(
-                    title: "Pothole",
-                    snippet:
-                        event.docs[index].data()['Description of Pothole']),
-                icon: BlueIcon,
-              ),
-            );
-          }
-        });
-      });
-      setState(() {});
+      setState(
+        () {
+          _markers.add(
+            Marker(
+              markerId: MarkerId("id 1"),
+              position: location,
+              icon: BlueIcon,
+            ),
+          );
+        },
+      );
     }
 
     return Scaffold(
       backgroundColor: Colors.deepPurple[50],
       appBar: AppBar(
-        title: Text("Maps"),
         backgroundColor: Colors.deepPurple[900],
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context, location);
+            },
+            child: Text(
+              "Confirm Location",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 15,
+              ),
+            ),
+          )
+        ],
       ),
       body: GoogleMap(
         markers: _markers,
         onMapCreated: _onMapCreated,
         initialCameraPosition: CameraPosition(
-          target: LatLng(19.0339, 73.0196),
+          target: location,
           zoom: 15,
         ),
+        onTap: (position) {
+          location = position;
+          _markers.clear();
+          _markers.add(
+            Marker(
+              markerId: MarkerId("id 1"),
+              position: location,
+              infoWindow:
+                  InfoWindow(title: "Pothole", snippet: "Pothole here!"),
+              icon: BlueIcon,
+            ),
+          );
+          setState(() {});
+        },
       ),
     );
   }
