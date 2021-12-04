@@ -2,7 +2,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
-import 'package:pothole_informer_app/utils/routes.dart';
+
+
+import '../routes.dart';
 
 class SlideIntro extends StatefulWidget {
   static TextStyle styleTitle = TextStyle(

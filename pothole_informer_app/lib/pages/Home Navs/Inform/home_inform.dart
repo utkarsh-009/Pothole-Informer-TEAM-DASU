@@ -114,7 +114,7 @@ class _InformPageState extends State<InformPage> {
                           _potholeDetailsFormKey.currentState!.validate()) {
                         imageURL = await downloadURL("Images/$uploadCode");
                         Map<String, dynamic> data = {
-                          "Phone No:": phone_no_data.text,
+                          "Phone No": phone_no_data.text,
                           "City": city_data.text,
                           "Address of Pothole": address_data.text,
                           "Latitude": potholeLocation.latitude,

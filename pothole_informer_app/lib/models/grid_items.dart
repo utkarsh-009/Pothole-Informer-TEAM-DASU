@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pothole_informer_app/utils/routes.dart';
+
+import '../routes.dart';
 
 class GridItems {
   String image;
