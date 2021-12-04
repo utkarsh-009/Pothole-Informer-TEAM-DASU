@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "873664720395",
+    "project_id": "pothole-informer-321c4",
+    "storage_bucket": "pothole-informer-321c4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:873664720395:android:b8c04737f51661c8f5e10e",
+        "android_client_info": {
+          "package_name": "com.example.pothole"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "873664720395-3hfooh85blcsj3l3gksgm3kbeirmrbe2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6EbDt-9uehWb0juEbHfdrVPN0uZLh6h8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "873664720395-3hfooh85blcsj3l3gksgm3kbeirmrbe2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
