@@ -1,11 +1,21 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: non_constant_identifier_names, must_be_immutable
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapPage extends StatefulWidget {
-  const MapPage({Key? key}) : super(key: key);
+  bool getLocation = false;
+  late CameraPosition potholeMarker;
+
+  MapPage({Key? key}) : super(key: key);
+
+  MapPage.getPothole(double potholeLat, double potHoleLong, {Key? key})
+      : super(key: key) {
+    potholeMarker =
+        CameraPosition(target: LatLng(potholeLat, potHoleLong), zoom: 15);
+    getLocation = true;
+  }
 
   @override
   State<MapPage> createState() => _MapPageState();
@@ -26,11 +36,11 @@ class _MapPageState extends State<MapPage> {
 
   void setCustomMarkerIcon() async {
     RedIcon = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(), "assets/images/RedMarker.png");
+        const ImageConfiguration(), "assets/images/RedMarker.png");
     YellowIcon = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(), "assets/images/YellowMarker.png");
+        const ImageConfiguration(), "assets/images/YellowMarker.png");
     BlueIcon = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(), "assets/images/BlueMarker.png");
+        const ImageConfiguration(), "assets/images/BlueMarker.png");
   }
 
   @override
@@ -64,16 +74,18 @@ class _MapPageState extends State<MapPage> {
     return Scaffold(
       backgroundColor: Colors.deepPurple[50],
       appBar: AppBar(
-        title: Text("Maps"),
+        title: const Text("Maps"),
         backgroundColor: Colors.deepPurple[900],
       ),
       body: GoogleMap(
         markers: _markers,
         onMapCreated: _onMapCreated,
-        initialCameraPosition: CameraPosition(
-          target: LatLng(19.0339, 73.0196),
-          zoom: 15,
-        ),
+        initialCameraPosition: widget.getLocation == false
+            ? const CameraPosition(
+                target: LatLng(19.0339, 73.0196),
+                zoom: 15,
+              )
+            : widget.potholeMarker,
       ),
     );
   }

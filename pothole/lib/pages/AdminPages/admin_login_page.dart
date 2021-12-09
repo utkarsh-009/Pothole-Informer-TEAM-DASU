@@ -1,6 +1,8 @@
+// ignore_for_file: avoid_types_as_parameter_names, non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 
-import '../utils/routes.dart';
+import '../../utils/routes.dart';
 
 class AdminLogin extends StatefulWidget {
   const AdminLogin({Key? key}) : super(key: key);
@@ -20,7 +22,7 @@ class _AdminLoginState extends State<AdminLogin> {
         changeButton = true;
       });
 
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(const Duration(seconds: 1));
       await Navigator.pushNamed(context, MyRoutes.adminHomeRoute);
       setState(() {
         changeButton = false;
@@ -37,17 +39,17 @@ class _AdminLoginState extends State<AdminLogin> {
           key: _formKey,
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               Image.asset(
                 "assets/images/admin_login.png",
                 fit: BoxFit.cover,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 35,
                 child: Text(
                   "Admin Login",
@@ -57,7 +59,7 @@ class _AdminLoginState extends State<AdminLogin> {
               // SizedBox(
               //   height: 10,
               // ),
-              SizedBox(
+              const SizedBox(
                 height: 35,
                 child: Text(
                   "Only For Administrators",
@@ -76,7 +78,7 @@ class _AdminLoginState extends State<AdminLogin> {
                 child: Column(
                   children: [
                     TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: "Enter Username",
                         labelText: "Username",
                       ),
@@ -89,7 +91,7 @@ class _AdminLoginState extends State<AdminLogin> {
                     ),
                     TextFormField(
                       obscureText: true,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: "Enter Password",
                         labelText: "Password",
                       ),
@@ -102,7 +104,7 @@ class _AdminLoginState extends State<AdminLogin> {
                         return null;
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 40,
                     ),
                     Material(
@@ -112,16 +114,16 @@ class _AdminLoginState extends State<AdminLogin> {
                       child: InkWell(
                         onTap: () => moveToHome(context),
                         child: AnimatedContainer(
-                          duration: Duration(seconds: 1),
+                          duration: const Duration(seconds: 1),
                           width: changeButton ? 50 : 150,
                           height: 50,
                           alignment: Alignment.center,
                           child: changeButton
-                              ? Icon(
+                              ? const Icon(
                                   Icons.done,
                                   color: Colors.white,
                                 )
-                              : Text(
+                              : const Text(
                                   "Login",
                                   style: TextStyle(
                                       color: Colors.white,

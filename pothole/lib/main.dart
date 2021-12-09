@@ -1,26 +1,27 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'package:pothole/pages/AdminPages/admin_homepage.dart';
 import 'package:pothole/pages/HomeNavs/about.dart';
 import 'package:pothole/pages/HomeNavs/stats.dart';
 import 'package:pothole/pages/HomeNavs/tracker.dart';
 import 'package:pothole/pages/user_page.dart';
 import 'package:pothole/provider/google_sign_in.dart';
-import 'package:provider/provider.dart';
 
-import './pages/google_user_login_page.dart';
 import './pages/HomeNavs/FeedBack.dart';
-import 'pages/HomeNavs/Inform/home_inform.dart';
 import './pages/HomeNavs/maps.dart';
-import './pages/admin_homepage.dart';
-import './pages/admin_login_page.dart';
 import './pages/first_page.dart';
+import './pages/google_user_login_page.dart';
+import './pages/slide_intro.dart';
 import './pages/user_homepage.dart';
 import './pages/user_login_page.dart';
 import './utils/routes.dart';
-import './pages/slide_intro.dart';
+import 'pages/AdminPages/admin_login_page.dart';
+import 'pages/HomeNavs/Inform/home_inform.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
