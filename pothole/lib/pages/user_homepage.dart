@@ -23,12 +23,12 @@ class UserHomePage extends StatelessWidget {
               elevation: 0,
               title: Text("Pothole Informer"),
               actions: [
-                IconButton(onPressed: () {}, icon: Icon(Icons.notifications)),
                 IconButton(
                     onPressed: () {
                       Navigator.pushNamed(context, MyRoutes.sliderIntroRoute);
                     },
-                    icon: Icon(Icons.info_outline)),
+                    icon: Icon(Icons.info)),
+                IconButton(onPressed: () {}, icon: Icon(Icons.notifications))
               ],
             ),
             body: SingleChildScrollView(

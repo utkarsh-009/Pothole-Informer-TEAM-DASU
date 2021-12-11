@@ -1,6 +1,11 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: avoid_types_as_parameter_names, non_constant_identifier_names
 
-import '../utils/routes.dart';
+import 'package:flutter/material.dart';
+import 'package:pothole/utils/routes.dart';
+
+
+
+
 
 class AdminLogin extends StatefulWidget {
   const AdminLogin({Key? key}) : super(key: key);
@@ -20,7 +25,7 @@ class _AdminLoginState extends State<AdminLogin> {
         changeButton = true;
       });
 
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(const Duration(seconds: 1));
       await Navigator.pushNamed(context, MyRoutes.adminHomeRoute);
       setState(() {
         changeButton = false;
@@ -37,17 +42,17 @@ class _AdminLoginState extends State<AdminLogin> {
           key: _formKey,
           child: Column(
             children: [
-              SizedBox(
-                height: 60,
+              const SizedBox(
+                height: 50,
               ),
               Image.asset(
                 "assets/images/admin_login.png",
                 fit: BoxFit.cover,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 35,
                 child: Text(
                   "Admin Login",
@@ -57,7 +62,7 @@ class _AdminLoginState extends State<AdminLogin> {
               // SizedBox(
               //   height: 10,
               // ),
-              SizedBox(
+              const SizedBox(
                 height: 35,
                 child: Text(
                   "Only For Administrators",
@@ -76,11 +81,7 @@ class _AdminLoginState extends State<AdminLogin> {
                 child: Column(
                   children: [
                     TextFormField(
-                      decoration: InputDecoration(
-                        prefixIcon: Icon(
-                          Icons.person,
-                          color: Colors.deepPurple,
-                        ),
+                      decoration: const InputDecoration(
                         hintText: "Enter Username",
                         labelText: "Username",
                       ),
@@ -93,11 +94,7 @@ class _AdminLoginState extends State<AdminLogin> {
                     ),
                     TextFormField(
                       obscureText: true,
-                      decoration: InputDecoration(
-                        prefixIcon: Icon(
-                          Icons.lock,
-                          color: Colors.deepPurple,
-                        ),
+                      decoration: const InputDecoration(
                         hintText: "Enter Password",
                         labelText: "Password",
                       ),
@@ -110,26 +107,26 @@ class _AdminLoginState extends State<AdminLogin> {
                         return null;
                       },
                     ),
-                    SizedBox(
-                      height: 30,
+                    const SizedBox(
+                      height: 40,
                     ),
                     Material(
                       color: Colors.deepPurple,
                       borderRadius: BorderRadius.circular(
-                          changeButton ? 50 : 150), //Smooth animation
+                          changeButton ? 50 : 8), //Smooth animation
                       child: InkWell(
                         onTap: () => moveToHome(context),
                         child: AnimatedContainer(
-                          duration: Duration(seconds: 1),
+                          duration: const Duration(seconds: 1),
                           width: changeButton ? 50 : 150,
                           height: 50,
                           alignment: Alignment.center,
                           child: changeButton
-                              ? Icon(
+                              ? const Icon(
                                   Icons.done,
                                   color: Colors.white,
                                 )
-                              : Text(
+                              : const Text(
                                   "Login",
                                   style: TextStyle(
                                       color: Colors.white,
