@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:pothole/pages/user_homepage.dart';
+import 'package:pothole/provider/authentication/google_sign_in.dart';
 
 import '../utils/routes.dart';
 
@@ -45,12 +47,14 @@ class _UserLoginState extends State<UserLogin> {
               Image.asset(
                 "assets/images/login_image.png",
                 fit: BoxFit.cover,
+                height: 255,
+                width: 400,
               ),
+              // SizedBox(
+              //   height: 0,
+              // ),
               SizedBox(
-                height: 5,
-              ),
-              SizedBox(
-                height: 35,
+                height: 33,
                 child: Text(
                   "User Login",
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
@@ -71,11 +75,15 @@ class _UserLoginState extends State<UserLogin> {
               // ),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 0),
                 child: Column(
                   children: [
                     TextFormField(
                       decoration: InputDecoration(
+                        prefixIcon: Icon(
+                          Icons.person,
+                          color: Colors.deepPurple,
+                        ),
                         hintText: "Enter Username",
                         labelText: "Username",
                       ),
@@ -89,6 +97,10 @@ class _UserLoginState extends State<UserLogin> {
                     TextFormField(
                       obscureText: true,
                       decoration: InputDecoration(
+                        prefixIcon: Icon(
+                          Icons.lock,
+                          color: Colors.deepPurple,
+                        ),
                         hintText: "Enter Password",
                         labelText: "Password",
                       ),
@@ -102,16 +114,16 @@ class _UserLoginState extends State<UserLogin> {
                       },
                     ),
                     SizedBox(
-                      height: 40,
+                      height: 30,
                     ),
                     Material(
                       color: Colors.deepPurple,
                       borderRadius: BorderRadius.circular(
-                          changeButton ? 50 : 8), //Smooth animation
+                          changeButton ? 50 : 150), //Smooth animation
                       child: InkWell(
                         onTap: () => moveToHome(context),
                         child: AnimatedContainer(
-                          duration: Duration(milliseconds: 800),
+                          duration: Duration(seconds: 1),
                           width: changeButton ? 50 : 150,
                           height: 50,
                           alignment: Alignment.center,
@@ -127,27 +139,116 @@ class _UserLoginState extends State<UserLogin> {
                                       fontWeight: FontWeight.bold,
                                       fontSize: 18),
                                 ),
-                          // decoration: BoxDecoration(
-                          //   color: Colors.deepPurple,
-                          // shape: changeButton ? BoxShape.circle : BoxShape.rectangle, //Not smooth animation
                         ),
                       ),
                     ),
-                    /*
-                    ElevatedButton(
-                      child: Text(
-                        "Login",
-                        style: TextStyle(fontSize: 18),
-                      ),
-                      onPressed: () {
-                        Navigator.pushNamed(context, MyRoutes.homeRoute);
-                      },
-                      style: TextButton.styleFrom(minimumSize: Size(100, 50)),
-                    )
-                    */
                   ],
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  children: [
+                    Text(
+                      '-- OR --',
+                      style: TextStyle(fontSize: 15),
+                    ),
+                    Text(
+                      'Sign in using',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    )
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: () async {
+                      print("Logged in with Google");
+                      signInWithGoogle().then((result) {
+                        if (result != null) {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return UserHomePage();
+                              },
+                            ),
+                          );
+                        }
+                      });
+                    },
+                    child: Container(
+                      height: 60,
+                      width: 60,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black26,
+                            offset: Offset(0, 2),
+                            blurRadius: 6.0,
+                          ),
+                        ],
+                        image: DecorationImage(
+                          image: AssetImage("assets/images/google.png"),
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      print("Logged in with Facebook");
+                    },
+                    child: Container(
+                      height: 60,
+                      width: 60,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black26,
+                            offset: Offset(0, 2),
+                            blurRadius: 6.0,
+                          ),
+                        ],
+                        image: DecorationImage(
+                          image: AssetImage("assets/images/facebook.png"),
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      print("Logged in with Instagram");
+                    },
+                    child: Container(
+                      height: 60,
+                      width: 60,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black26,
+                            offset: Offset(0, 2),
+                            blurRadius: 6.0,
+                          ),
+                        ],
+                        image: DecorationImage(
+                          image: AssetImage("assets/images/instagram.png"),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              )
             ],
           ),
         ),
