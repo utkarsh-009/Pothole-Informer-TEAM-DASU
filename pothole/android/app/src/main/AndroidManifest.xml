@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pothole">
    <application
-        android:label="pothole"
+        android:label="Pothole Informer"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API_KEY"
                android:value="AIzaSyC-l8uAdijvO5kzwPGVKvO4x3nqNpQiXFw"/>
