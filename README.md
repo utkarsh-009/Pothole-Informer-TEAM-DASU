@@ -19,8 +19,8 @@ Mentors
 
 -   Krishna Asher
 
-DescriptionAUR KUCH BACHA HAI KYA?? 
-------------------------------------
+Description
+------------
 
 Pothole Informer is an android application that helps users to provide
 the information about the potholes in their area. Users can also view
@@ -51,19 +51,19 @@ We used Dart Language and Flutter as Framework. We used firebase for the backend
 Progress
 --------
 
--   ~~Informing about Potholes~~
+-   [x]Informing about Potholes
 
--   ~~Viewing Potholes in Google Maps~~
+-   [x]Viewing Potholes in Google Maps
 
--   ~~Google User Authentication~~
+-   [x]Google User Authentication
 
--   ~~Administrator getting Information about Informed Potholes ~~
+-   [x]Administrator getting Information about Informed Potholes
 
--   Track user location.
+-   [ ]Track user location.
 
--   Response to the user by admin.
+-   [ ]Response to the user by admin.
 
--   Feedback by user.
+-   [ ]Feedback by user.
 
 Project Setup
 -------------
@@ -72,16 +72,11 @@ Project Setup
 
 1.  Any Operating System (ie. MacOS X, Linux, Windows)
 
-2.  Any IDE with Flutter SDK installed (ie. IntelliJ, Android Studio,
-    > VSCode etc)
+2.  Any IDE with Flutter SDK installed (ie. IntelliJ, Android Studio, VSCode etc)
 
 3.  A little knowledge of Dart and Flutter.
 
-4.  The more you know: Dart is an open-source general-purpose
-    > programming language. It was originally developed by Google. Dart
-    > is an object-oriented language with C-style syntax. It supports
-    > programming concepts like interfaces, classes, unlike other
-    > programming languages.
+4.  The more you know: Dart is an open-source general-purpose programming language. It was originally developed by Google. Dart is an object-oriented language with C-style syntax. It supports programming concepts like interfaces, classes, unlike other programming languages.
 
 5.  1 GB storage
 
@@ -89,15 +84,11 @@ Project Setup
 
 1.  Clone this github repository into your local device.
 
-2.  Open the pothole folder in your IDE with Flutter SDK installed (ie.
-    > IntelliJ, Android Studio, VSCode etc).
+2.  Open the pothole folder in your IDE with Flutter SDK installed (ie. IntelliJ, Android Studio, VSCode etc).
 
-3.  Install all the packages required. Run flutter pub get from the
-    > terminal to install the required packages.
+3.  Install all the packages required. Run flutter pub get from the terminal to install the required packages.
 
-4.  Now in order to run the file for debugging you need to add your
-    > SHA-1 and SHA-256 in our firebase as we have added user
-    > authentication in using google account.
+4.  Now in order to run the file for debugging you need to add your SHA-1 and SHA-256 in our firebase as we have added user authentication in using google account.
 
 5.  If you want to collaborate please contact the undersigned.
 
@@ -162,12 +153,12 @@ Applications
 Future scope 
 -------------
 
-In the near future, if the app gets approved by some government body, we
-can develop the admin side of the app giving it more functionalities
-like accepting requests, updating the status of a complaint, etc. This
-status will reflect on the user’s side of the app on the Tracker Page
-which will give him/her real time updates and improve the overall user
-experience.
+>In the near future, if the app gets approved by some government body, we
+>can develop the admin side of the app giving it more functionalities
+>like accepting requests, updating the status of a complaint, etc. This
+>status will reflect on the user’s side of the app on the Tracker Page
+>which will give him/her real time updates and improve the overall user
+>experience.
 
 Screenshots
 -----------
@@ -177,15 +168,15 @@ Screenshots
 
 -   Informing About Potholes
 
-> ![](media/image1.jpg){width="2.8638582677165356in"
+> ![](Images/image1.jpg){width="2.8638582677165356in"
 > height="5.609375546806649in"}
 
 -   Getting Details of Potholes for Administrator
 
-> ![](media/image2.jpg){width="2.8685859580052493in"
+> ![](Images/image2.jpg){width="2.8685859580052493in"
 > height="5.630208880139983in"}
 
 -   Showing Map Location of Potholes for Administrator
 
-> ![](media/image3.jpg){width="2.919063867016623in"
+> ![](Images/image3.jpg){width="2.919063867016623in"
 > height="5.807292213473316in"}
