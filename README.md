@@ -1,65 +1,191 @@
-# Pothole Informer
+Pothole Informer
+================
 
-### Team name: DASU
+### Team name: TEAM DASU 
 
-## Team members
-* Member-1 - Email
-* Member-2 - Email
-* Member-3 - Email
-* Member-4 - Email
+Team members 
+-------------
 
-## Mentors
-* Mentor-1
-* Mentor-2 
-* Mentor-3
+-   Amogh Prabhu - amoghprabhu2@gmail.com
 
-## Description
-Add your project description here. Your project description should cover how your website/app works. That way you can convey what your project is without the need for anyone to view the code. A more detailed readme in your project repository is encouraged, which can include build and use instructions etc.
+-   Soumitra Kand - soumitrakand3@gmail.com
 
-* Use bullet points for any feature descriptions you may want to add
+-   Utkarsh Patil - utkarshpatil2001@gmail.com
 
+Mentors 
+--------
 
-Don't forget to replace the link here with **_your own Github repository_** link.
+-   Chaitravi Chalke
 
-Along with this, add the link of the drive folder that contains the app APK/Screenshots/Screen Recordings. If you have hosted your project on the web, add that link as well.
+-   Krishna Asher
 
-* GitHub repo link: [Link to repository](https://github.com/your-repo-link)
-* Drive link: [Drive link here](https://drive.google.com/)
-* Website link: [Website link here](www.google.com) (for final submission, optional)
+DescriptionAUR KUCH BACHA HAI KYA?? 
+------------------------------------
 
-## Technology stack
+Pothole Informer is an android application that helps users to provide
+the information about the potholes in their area. Users can also view
+the potholes in their locality. The information submitted by the users
+will be provided to the concerned authorities.
 
-Tools and technologies that you learnt and used in the project.
+-   GitHub repo link:
+    [**https://github.com/utkarsh-009/Pothole-Informer-TEAM-DASU**](https://github.com/utkarsh-009/Pothole-Informer-TEAM-DASU)
 
-1. Language-1
-2. Language-2
-3. Framework-1
-4. Framework-2 (Add or remove as required)
+-   Drive link:
+    [*https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd*](https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd)
 
-## Progress
+Technology stack 
+-----------------
 
-- [x] Feature 1
-- [x] Feature 2
-- [x] Feature 3
-- [ ] Feature 4
-- [ ] Feature 5
+We used Dart Language and Flutter as Framework. We used firebase for the backend.
+---------------------------------------------------------------------------------
 
-List down all the tasks/features for your project and cross out the ones which are completed.
+1.  Dart
 
-## Project Setup
->Include your project setup basics here. Steps for how someone else can setup your project on their machine. Add any relevant details as well.
-## Usage
->Steps to run your project once its setup. If you have an app or website, list how the user can go about using it.
-## Applications
->How can your project do its part in solving a real-life problem? What are its possible applications? Describe here.
-## Future scope
->Mention ways in which the project can be improved and built upon in the future.
-## Screenshots
-Add a few screenshots for parts of the project completed till now to give the viewer a quick idea of what your project looks like. After all, a picture speaks a thousand words.
+2.  Flutter (Framework)
 
-You'll have to link the screenshots from your drive folder here.
+3.  Firebase for Realtime Data Storage, Firestore and Google
+    authentication
 
-![Screenshot alt text](https://thecodinglove.com/wp-content/uploads/2019/03/img_0846.jpg "Here is a screenshot")
+4.  Google Maps API
 
-Use this template as a guide for writing your documentation. Feel free to customize and adapt it for you project.
-For more Markdown syntax help, visit [here](https://www.markdownguide.org/basic-syntax/)
+Progress
+--------
+
+-   ~~Informing about Potholes~~
+
+-   ~~Viewing Potholes in Google Maps~~
+
+-   ~~Google User Authentication~~
+
+-   ~~Administrator getting Information about Informed Potholes ~~
+
+-   Track user location.
+
+-   Response to the user by admin.
+
+-   Feedback by user.
+
+Project Setup
+-------------
+
+> Requirements:
+
+1.  Any Operating System (ie. MacOS X, Linux, Windows)
+
+2.  Any IDE with Flutter SDK installed (ie. IntelliJ, Android Studio,
+    > VSCode etc)
+
+3.  A little knowledge of Dart and Flutter.
+
+4.  The more you know: Dart is an open-source general-purpose
+    > programming language. It was originally developed by Google. Dart
+    > is an object-oriented language with C-style syntax. It supports
+    > programming concepts like interfaces, classes, unlike other
+    > programming languages.
+
+5.  1 GB storage
+
+> Setup:
+
+1.  Clone this github repository into your local device.
+
+2.  Open the pothole folder in your IDE with Flutter SDK installed (ie.
+    > IntelliJ, Android Studio, VSCode etc).
+
+3.  Install all the packages required. Run flutter pub get from the
+    > terminal to install the required packages.
+
+4.  Now in order to run the file for debugging you need to add your
+    > SHA-1 and SHA-256 in our firebase as we have added user
+    > authentication in using google account.
+
+5.  If you want to collaborate please contact the undersigned.
+
+Usage
+-----
+
+> For Users:
+>
+> User first has to login to our app using his/her Gmail account.
+>
+> After logging in to our app, the user is directed to the homepage of
+> our app. Here users can select from the options provided.
+
+-   Inform
+
+-   Map
+
+-   Feedback
+
+-   Tracker
+
+-   Stats
+
+-   About
+
+> In the inform page the user can submit all the details about the
+> pothole. User has to enter his phone number and location of the
+> pothole and can enter the description of the pothole and can upload
+> its picture.
+>
+> In the maps page users can view all the potholes that have been
+> uploaded by other users.
+>
+> For admins:
+>
+> Admin has to login using his credentials.
+
+1.  In the admin page you can view the details of the potholes submitted
+    by the users.
+
+2.  To view the details of the pothole, click on the image to navigate
+    to the pothole details page.
+
+3.  In this page the location and the description of the pothole will
+    be visible.
+
+4.  To view the location of the pothole on the map by clicking the “Open
+    in maps” button. This button will navigate the user to the google
+    maps page.
+
+Applications 
+-------------
+
+> Each and every year due to the rainy season numerous potholes get
+> created at various places, this causes lots of accidents to occur.
+> This application can be used by local people to inform about the
+> potholes (by sharing the location) that are dangerous and need to be
+> fixed. This application will send these data to the municipal
+> corporation, where the corporation can take actions by filling the
+> pothole, or putting a signboard, etc.
+
+Future scope 
+-------------
+
+In the near future, if the app gets approved by some government body, we
+can develop the admin side of the app giving it more functionalities
+like accepting requests, updating the status of a complaint, etc. This
+status will reflect on the user’s side of the app on the Tracker Page
+which will give him/her real time updates and improve the overall user
+experience.
+
+Screenshots
+-----------
+
+> Drive Link Folder:
+> [*https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd*](https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd)
+
+-   Informing About Potholes
+
+> ![](media/image1.jpg){width="2.8638582677165356in"
+> height="5.609375546806649in"}
+
+-   Getting Details of Potholes for Administrator
+
+> ![](media/image2.jpg){width="2.8685859580052493in"
+> height="5.630208880139983in"}
+
+-   Showing Map Location of Potholes for Administrator
+
+> ![](media/image3.jpg){width="2.919063867016623in"
+> height="5.807292213473316in"}
