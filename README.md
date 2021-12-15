@@ -51,13 +51,13 @@ We used Dart Language and Flutter as Framework. We used firebase for the backend
 Progress
 --------
 
--   [x]Informing about Potholes
+-   [✓]Informing about Potholes
 
--   [x]Viewing Potholes in Google Maps
+-   [✓]Viewing Potholes in Google Maps
 
--   [x]Google User Authentication
+-   [✓]Google User Authentication
 
--   [x]Administrator getting Information about Informed Potholes
+-   [✓]Administrator getting Information about Informed Potholes
 
 -   [ ]Track user location.
 
