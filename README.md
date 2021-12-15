@@ -168,15 +168,12 @@ Screenshots
 
 -   Informing About Potholes
 
-> ![](Images/image1.jpg){width="2.8638582677165356in"
-> height="5.609375546806649in"}
+> ![](Images/image1.jpg)
 
 -   Getting Details of Potholes for Administrator
 
-> ![](Images/image2.jpg){width="2.8685859580052493in"
-> height="5.630208880139983in"}
+> ![](Images/image2.jpg)
 
 -   Showing Map Location of Potholes for Administrator
 
-> ![](Images/image3.jpg){width="2.919063867016623in"
-> height="5.807292213473316in"}
+> ![](Images/image3.jpg)
