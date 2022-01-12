@@ -14,7 +14,7 @@ import 'package:provider/provider.dart';
 import './pages/google_user_login_page.dart';
 import './pages/HomeNavs/FeedBack.dart';
 import './pages/HomeNavs/maps.dart';
-import './pages/admin_login_page.dart';
+import './pages/AdminPages/admin_login_page.dart';
 import './pages/first_page.dart';
 import './pages/google_user_login_page.dart';
 import './pages/slide_intro.dart';
