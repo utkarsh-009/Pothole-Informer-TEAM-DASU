@@ -79,6 +79,7 @@ class _MapPageState extends State<MapPage> {
       ),
       body: GoogleMap(
         markers: _markers,
+        mapType: MapType.hybrid,
         onMapCreated: _onMapCreated,
         initialCameraPosition: widget.getLocation == false
             ? const CameraPosition(

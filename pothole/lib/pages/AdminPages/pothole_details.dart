@@ -166,7 +166,7 @@ class DetailedInfo extends StatelessWidget {
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(left: 8.0),
-              child: Text(field, style: DetailedInfo.descStyle),
+              child: Text("$field", style: DetailedInfo.descStyle),
             ),
           ),
         ],

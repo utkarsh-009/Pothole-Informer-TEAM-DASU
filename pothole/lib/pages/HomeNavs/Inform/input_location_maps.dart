@@ -70,6 +70,7 @@ class _InputLocationState extends State<InputLocation> {
       body: GoogleMap(
         markers: _markers,
         onMapCreated: _onMapCreated,
+        mapType: MapType.hybrid,
         initialCameraPosition: CameraPosition(
           target: location,
           zoom: 15,
