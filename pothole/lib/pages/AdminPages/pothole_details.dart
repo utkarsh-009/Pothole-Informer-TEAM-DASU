@@ -75,7 +75,7 @@ class DetailedInfo extends StatelessWidget {
                 ),
                 placeHolders(
                   "Phone No.",
-                  item['Phone No:'],
+                  item['Phone No'],
                 ),
                 placeHolders(
                   "Description",
