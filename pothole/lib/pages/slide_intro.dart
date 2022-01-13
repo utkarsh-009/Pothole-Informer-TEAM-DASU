@@ -2,7 +2,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
-import 'package:pothole/utils/routes.dart';
 
 class SplashScreen extends StatefulWidget {
   static TextStyle styleTitle = TextStyle(
