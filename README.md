@@ -1,43 +1,37 @@
-Pothole Informer
-================
+# Pothole Informer
 
-### Team name: TEAM DASU 
+### Team name: TEAM DASU
 
-Team members 
--------------
+## Team members
 
--   Amogh Prabhu - amoghprabhu2@gmail.com
+- Amogh Prabhu - amoghprabhu2@gmail.com
 
--   Soumitra Kand - soumitrakand3@gmail.com
+- Soumitra Kand - soumitrakand3@gmail.com
 
--   Utkarsh Patil - utkarshpatil2001@gmail.com
+- Utkarsh Patil - utkarshpatil2001@gmail.com
 
-Mentors 
---------
+## Mentors
 
--   Chaitravi Chalke
+- Chaitravi Chalke
 
--   Krishna Asher
+- Krishna Asher
 
-Description
-------------
+## Description
 
 Pothole Informer is an android application that helps users to provide
 the information about the potholes in their area. Users can also view
 the potholes in their locality. The information submitted by the users
 will be provided to the concerned authorities.
 
--   GitHub repo link:
-    [**https://github.com/utkarsh-009/Pothole-Informer-TEAM-DASU**](https://github.com/utkarsh-009/Pothole-Informer-TEAM-DASU)
+- GitHub repo link:
+  [**https://github.com/utkarsh-009/Pothole-Informer-TEAM-DASU**](https://github.com/utkarsh-009/Pothole-Informer-TEAM-DASU)
 
--   Drive link:
-    [*https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd*](https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd)
+- Drive link:
+  [_https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd_](https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd)
 
-Technology stack 
------------------
+## Technology stack
 
-We used Dart Language and Flutter as Framework. We used firebase for the backend.
----------------------------------------------------------------------------------
+## We used Dart Language and Flutter as Framework. We used firebase for the backend.
 
 1.  Dart
 
@@ -48,25 +42,23 @@ We used Dart Language and Flutter as Framework. We used firebase for the backend
 
 4.  Google Maps API
 
-Progress
---------
+## Progress
 
--   [✓]Informing about Potholes
+- [✓]Informing about Potholes
 
--   [✓]Viewing Potholes in Google Maps
+- [✓]Viewing Potholes in Google Maps
 
--   [✓]Google User Authentication
+- [✓]Google User Authentication
 
--   [✓]Administrator getting Information about Informed Potholes
+- [✓]Administrator getting Information about Informed Potholes
 
--   [ ]Track user location.
+- [ ]Track user location.
 
--   [ ]Response to the user by admin.
+- [ ]Response to the user by admin.
 
--   [ ]Feedback by user.
+- [ ]Feedback by user.
 
-Project Setup
--------------
+## Project Setup
 
 > Requirements:
 
@@ -92,8 +84,7 @@ Project Setup
 
 5.  If you want to collaborate please contact the undersigned.
 
-Usage
------
+## Usage
 
 > For Users:
 >
@@ -102,17 +93,17 @@ Usage
 > After logging in to our app, the user is directed to the homepage of
 > our app. Here users can select from the options provided.
 
--   Inform
+- Inform
 
--   Map
+- Map
 
--   Feedback
+- Feedback
 
--   Tracker
+- Tracker
 
--   Stats
+- Stats
 
--   About
+- About
 
 > In the inform page the user can submit all the details about the
 > pothole. User has to enter his phone number and location of the
@@ -139,8 +130,7 @@ Usage
     in maps” button. This button will navigate the user to the google
     maps page.
 
-Applications 
--------------
+## Applications
 
 > Each and every year due to the rainy season numerous potholes get
 > created at various places, this causes lots of accidents to occur.
@@ -150,30 +140,30 @@ Applications
 > corporation, where the corporation can take actions by filling the
 > pothole, or putting a signboard, etc.
 
-Future scope 
--------------
+## Future scope
 
->In the near future, if the app gets approved by some government body, we
->can develop the admin side of the app giving it more functionalities
->like accepting requests, updating the status of a complaint, etc. This
->status will reflect on the user’s side of the app on the Tracker Page
->which will give him/her real time updates and improve the overall user
->experience.
+> In the near future, if the app gets approved by some government body, we
+> can develop the admin side of the app giving it more functionalities
+> like accepting requests, updating the status of a complaint, etc. This
+> status will reflect on the user’s side of the app on the Tracker Page
+> which will give him/her real time updates and improve the overall user
+> experience.
 
-Screenshots
------------
+## Screenshots
 
 > Drive Link Folder:
-> [*https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd*](https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd)
+> [_https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd_](https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd)
 
--   Informing About Potholes
+- Informing About Potholes
 
 > ![](Images/image1.jpg)
 
--   Getting Details of Potholes for Administrator
+- Getting Details of Potholes for Administrator
 
 > ![](Images/image2.jpg)
 
--   Showing Map Location of Potholes for Administrator
+- Showing Map Location of Potholes for Administrator
 
 > ![](Images/image3.jpg)
+>
+> > > > > > > main
