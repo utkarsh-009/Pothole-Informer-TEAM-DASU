@@ -27,6 +27,7 @@ class _MapPageState extends State<MapPage> {
   late BitmapDescriptor BlueIcon;
   List<LatLng> locations = [];
   final Set<Marker> _markers = {};
+  MapType _currentMapType = MapType.normal;
 
   @override
   void initState() {
@@ -71,6 +72,14 @@ class _MapPageState extends State<MapPage> {
       setState(() {});
     }
 
+    void _toggleMapType() {
+      setState(() {
+        _currentMapType = (_currentMapType == MapType.normal)
+            ? MapType.hybrid
+            : MapType.normal;
+      });
+    }
+
     return Scaffold(
       backgroundColor: Colors.deepPurple[50],
       appBar: AppBar(
@@ -79,7 +88,7 @@ class _MapPageState extends State<MapPage> {
       ),
       body: GoogleMap(
         markers: _markers,
-        mapType: MapType.hybrid,
+        mapType: _currentMapType,
         onMapCreated: _onMapCreated,
         initialCameraPosition: widget.getLocation == false
             ? const CameraPosition(
@@ -88,6 +97,15 @@ class _MapPageState extends State<MapPage> {
               )
             : widget.potholeMarker,
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
+          Icons.layers,
+          size: 30,
+        ),
+        onPressed: _toggleMapType,
+        heroTag: null,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
