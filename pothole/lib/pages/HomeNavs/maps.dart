@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -27,6 +25,7 @@ class _MapPageState extends State<MapPage> {
   late BitmapDescriptor BlueIcon;
   List<LatLng> locations = [];
   final Set<Marker> _markers = {};
+  MapType _currentMapType = MapType.normal;
 
   @override
   void initState() {
@@ -71,6 +70,14 @@ class _MapPageState extends State<MapPage> {
       setState(() {});
     }
 
+    void _toggleMapType() {
+      setState(() {
+        _currentMapType = (_currentMapType == MapType.normal)
+            ? MapType.hybrid
+            : MapType.normal;
+      });
+    }
+
     return Scaffold(
       backgroundColor: Colors.deepPurple[50],
       appBar: AppBar(
@@ -79,7 +86,7 @@ class _MapPageState extends State<MapPage> {
       ),
       body: GoogleMap(
         markers: _markers,
-        mapType: MapType.hybrid,
+        mapType: _currentMapType,
         onMapCreated: _onMapCreated,
         initialCameraPosition: widget.getLocation == false
             ? const CameraPosition(
@@ -88,6 +95,15 @@ class _MapPageState extends State<MapPage> {
               )
             : widget.potholeMarker,
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
+          Icons.layers,
+          size: 30,
+        ),
+        onPressed: _toggleMapType,
+        heroTag: null,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }

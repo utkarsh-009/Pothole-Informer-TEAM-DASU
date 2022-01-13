@@ -14,6 +14,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "873664720395-p632hsvm7sfa0grmcf678svdvtmbo0d6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pothole",
+            "certificate_hash": "9221baa2bb8128ce1ee2e0df0baef3f35a74672a"
+          }
+        },
+        {
+          "client_id": "873664720395-vouc1b3jpmrjnddf4vl6togfqmhqiins.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pothole",
+            "certificate_hash": "49135938f20673f6f4ff3716545dfa7821edd434"
+          }
+        },
+        {
           "client_id": "873664720395-3hfooh85blcsj3l3gksgm3kbeirmrbe2.apps.googleusercontent.com",
           "client_type": 3
         }

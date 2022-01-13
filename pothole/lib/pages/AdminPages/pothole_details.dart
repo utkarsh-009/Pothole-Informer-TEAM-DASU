@@ -29,7 +29,9 @@ class DetailedInfo extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("Pothole Details"),
+      ),
       body: SafeArea(
         child: Stack(
           children: [
@@ -75,7 +77,7 @@ class DetailedInfo extends StatelessWidget {
                 ),
                 placeHolders(
                   "Phone No.",
-                  item['Phone No:'],
+                  item['Phone No'],
                 ),
                 placeHolders(
                   "Description",
