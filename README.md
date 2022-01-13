@@ -1,7 +1,5 @@
 # Pothole Informer
 
-### Team name: DASU
-
 ### Team name: TEAM DASU
 
 ## Team members
