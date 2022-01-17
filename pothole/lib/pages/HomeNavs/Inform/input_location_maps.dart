@@ -33,7 +33,6 @@ class _InputLocationState extends State<InputLocation> {
   }
 
   final Set<Marker> _markers = {};
-  MapType _currentMapType = MapType.normal;
 
   @override
   Widget build(BuildContext context) {
@@ -51,14 +50,6 @@ class _InputLocationState extends State<InputLocation> {
           );
         },
       );
-    }
-
-    void _toggleMapType() {
-      setState(() {
-        _currentMapType = (_currentMapType == MapType.normal)
-            ? MapType.hybrid
-            : MapType.normal;
-      });
     }
 
     return Scaffold(
@@ -85,7 +76,7 @@ class _InputLocationState extends State<InputLocation> {
           GoogleMap(
             markers: _markers,
             onMapCreated: _onMapCreated,
-            mapType: _currentMapType,
+            mapType: MapType.hybrid,
             initialCameraPosition: CameraPosition(
               target: location,
               zoom: 15,
@@ -124,18 +115,9 @@ class _InputLocationState extends State<InputLocation> {
                 color: Colors.white,
               ),
             ),
-          ),
+          )
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(
-          Icons.layers,
-          size: 30,
-        ),
-        onPressed: _toggleMapType,
-        heroTag: null,
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 

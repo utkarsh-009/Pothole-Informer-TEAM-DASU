@@ -3,7 +3,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pothole/Models/grid_items.dart';
-import 'package:pothole/pages/user_login_page.dart';
 import 'package:pothole/provider/authentication/google_sign_in.dart';
 import 'package:pothole/widgets/Home/Drawer/nav_list_tile.dart';
 import 'package:provider/provider.dart';
@@ -84,12 +83,10 @@ class HomeDrawer extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: TextButton.icon(
-                  onPressed: () async {
-                    signOutGoogle();
-                    Navigator.of(context).pushAndRemoveUntil(
-                        MaterialPageRoute(builder: (context) {
-                      return UserLogin();
-                    }), ModalRoute.withName('/'));
+                  onPressed: () {
+                    final provider = Provider.of<GoogleSignInProvider>(context,
+                        listen: false);
+                    provider.logout();
                   },
                   icon: Icon(
                     Icons.logout,

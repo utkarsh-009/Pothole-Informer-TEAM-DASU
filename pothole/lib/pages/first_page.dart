@@ -42,8 +42,7 @@ class FirstPage extends StatelessWidget {
               height: 40,
             ),
             ElevatedButton(
-              onPressed: () =>
-                  Navigator.pushNamed(context, MyRoutes.userLoginRoute),
+              onPressed: () => Navigator.pushNamed(context, MyRoutes.userPage),
               child: Text(
                 "User Login",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),

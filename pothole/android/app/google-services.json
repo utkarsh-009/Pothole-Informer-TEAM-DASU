@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "873664720395-9jt8rohtarkqd1jsqdds46madc9tgpbt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pothole",
+            "certificate_hash": "9035d9ab3ce56b765d5245e1813c0acbb593d98c"
+          }
+        },
+        {
           "client_id": "873664720395-p632hsvm7sfa0grmcf678svdvtmbo0d6.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -27,6 +35,14 @@
           "android_info": {
             "package_name": "com.example.pothole",
             "certificate_hash": "49135938f20673f6f4ff3716545dfa7821edd434"
+          }
+        },
+        {
+          "client_id": "873664720395-vu173g4v8g1ibge0hs5geednelrno4f0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pothole",
+            "certificate_hash": "bac462ed8167d1d033fe214a2e0100fb2a6f7a5d"
           }
         },
         {

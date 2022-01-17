@@ -1,8 +1,6 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
-import 'package:pothole/pages/user_homepage.dart';
 import 'package:pothole/provider/authentication/google_sign_in.dart';
+import 'package:provider/provider.dart';
 
 import '../utils/routes.dart';
 
@@ -18,13 +16,13 @@ class _UserLoginState extends State<UserLogin> {
 
   final _formKey = GlobalKey<FormState>();
 
-  moveToHome(BuildContext) async {
+  moveToHome(BuildContext context) async {
     if (_formKey.currentState!.validate()) {
       setState(() {
         changeButton = true;
       });
 
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(const Duration(seconds: 1));
       await Navigator.pushNamed(context, MyRoutes.userHomeRoute);
       setState(() {
         changeButton = false;
@@ -41,7 +39,7 @@ class _UserLoginState extends State<UserLogin> {
           key: _formKey,
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Image.asset(
@@ -53,7 +51,7 @@ class _UserLoginState extends State<UserLogin> {
               // SizedBox(
               //   height: 0,
               // ),
-              SizedBox(
+              const SizedBox(
                 height: 33,
                 child: Text(
                   "User Login",
@@ -63,7 +61,7 @@ class _UserLoginState extends State<UserLogin> {
               // SizedBox(
               //   height: 10,
               // ),
-              Text(
+              const Text(
                 "Welcome To Login Page",
                 style: TextStyle(
                   fontSize: 20,
@@ -79,7 +77,7 @@ class _UserLoginState extends State<UserLogin> {
                 child: Column(
                   children: [
                     TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         prefixIcon: Icon(
                           Icons.person,
                           color: Colors.deepPurple,
@@ -96,7 +94,7 @@ class _UserLoginState extends State<UserLogin> {
                     ),
                     TextFormField(
                       obscureText: true,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         prefixIcon: Icon(
                           Icons.lock,
                           color: Colors.deepPurple,
@@ -113,7 +111,7 @@ class _UserLoginState extends State<UserLogin> {
                         return null;
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     Material(
@@ -123,16 +121,16 @@ class _UserLoginState extends State<UserLogin> {
                       child: InkWell(
                         onTap: () => moveToHome(context),
                         child: AnimatedContainer(
-                          duration: Duration(seconds: 1),
+                          duration: const Duration(seconds: 1),
                           width: changeButton ? 50 : 150,
                           height: 50,
                           alignment: Alignment.center,
                           child: changeButton
-                              ? Icon(
+                              ? const Icon(
                                   Icons.done,
                                   color: Colors.white,
                                 )
-                              : Text(
+                              : const Text(
                                   "Login",
                                   style: TextStyle(
                                       color: Colors.white,
@@ -148,7 +146,7 @@ class _UserLoginState extends State<UserLogin> {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Column(
-                  children: [
+                  children: const [
                     Text(
                       '-- OR --',
                       style: TextStyle(fontSize: 15),
@@ -168,24 +166,15 @@ class _UserLoginState extends State<UserLogin> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   GestureDetector(
-                    onTap: () async {
-                      print("Logged in with Google");
-                      signInWithGoogle().then((result) {
-                        if (result != null) {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return UserHomePage();
-                              },
-                            ),
-                          );
-                        }
-                      });
+                    onTap: () {
+                      final provider = Provider.of<GoogleSignInProvider>(context,
+                          listen: false);
+                      provider.googleLogin();
                     },
                     child: Container(
                       height: 60,
                       width: 60,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         color: Colors.white,
                         boxShadow: [
@@ -208,7 +197,7 @@ class _UserLoginState extends State<UserLogin> {
                     child: Container(
                       height: 60,
                       width: 60,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         color: Colors.white,
                         boxShadow: [
@@ -231,7 +220,7 @@ class _UserLoginState extends State<UserLogin> {
                     child: Container(
                       height: 60,
                       width: 60,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         color: Colors.white,
                         boxShadow: [
