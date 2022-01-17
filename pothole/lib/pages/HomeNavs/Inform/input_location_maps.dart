@@ -33,9 +33,11 @@ class _InputLocationState extends State<InputLocation> {
   }
 
   final Set<Marker> _markers = {};
+  MapType _currentMapType = MapType.normal;
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     void _onMapCreated(GoogleMapController controller) {
       controller.setMapStyle(Utils.mapStyle);
       _controller.complete(controller);
@@ -50,6 +52,14 @@ class _InputLocationState extends State<InputLocation> {
           );
         },
       );
+    }
+
+    void _toggleMapType() {
+      setState(() {
+        _currentMapType = (_currentMapType == MapType.normal)
+            ? MapType.hybrid
+            : MapType.normal;
+      });
     }
 
     return Scaffold(
@@ -76,7 +86,7 @@ class _InputLocationState extends State<InputLocation> {
           GoogleMap(
             markers: _markers,
             onMapCreated: _onMapCreated,
-            mapType: MapType.hybrid,
+            mapType: _currentMapType,
             initialCameraPosition: CameraPosition(
               target: location,
               zoom: 15,
@@ -97,10 +107,16 @@ class _InputLocationState extends State<InputLocation> {
             },
           ),
           Positioned(
-            bottom: 90,
-            right: 20,
-            child: TextButton(
+            bottom: size.height / 6.5,
+            right: 17,
+            child: ElevatedButton(
               onPressed: _currentLocation,
+              style: ElevatedButton.styleFrom(
+                elevation: 5,
+                shape: const CircleBorder(
+                  side: BorderSide.none,
+                ),
+              ),
               child: Material(
                 child: Padding(
                   padding: const EdgeInsets.all(17.0),
@@ -109,15 +125,25 @@ class _InputLocationState extends State<InputLocation> {
                     height: 28,
                   ),
                 ),
-                elevation: 7,
+                elevation: 5,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50)),
+                  borderRadius: BorderRadius.circular(50),
+                ),
                 color: Colors.white,
               ),
             ),
-          )
+          ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
+          Icons.layers,
+          size: 30,
+        ),
+        onPressed: _toggleMapType,
+        heroTag: null,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 

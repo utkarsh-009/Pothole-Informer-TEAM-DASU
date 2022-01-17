@@ -28,6 +28,7 @@ class _MapPageState extends State<MapPage> {
   late BitmapDescriptor BlueIcon;
   List<LatLng> locations = [];
   final Set<Marker> _markers = {};
+  MapType _currentMapType = MapType.normal;
 
   @override
   void initState() {
@@ -46,6 +47,7 @@ class _MapPageState extends State<MapPage> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     void _onMapCreated(GoogleMapController controller) {
       _controller.complete(controller);
       controller.setMapStyle(Utils.mapStyle);
@@ -75,6 +77,14 @@ class _MapPageState extends State<MapPage> {
       setState(() {});
     }
 
+    void _toggleMapType() {
+      setState(() {
+        _currentMapType = (_currentMapType == MapType.normal)
+            ? MapType.hybrid
+            : MapType.normal;
+      });
+    }
+
     return Scaffold(
       backgroundColor: Colors.deepPurple[50],
       appBar: AppBar(
@@ -85,7 +95,7 @@ class _MapPageState extends State<MapPage> {
         children: [
           GoogleMap(
             markers: _markers,
-            mapType: MapType.hybrid,
+            mapType: _currentMapType,
             myLocationEnabled: true,
             myLocationButtonEnabled: false,
             onMapCreated: _onMapCreated,
@@ -97,19 +107,25 @@ class _MapPageState extends State<MapPage> {
                 : widget.potholeMarker,
           ),
           Positioned(
-            bottom: 110,
-            right: 25,
-            child: TextButton(
+            bottom: size.height / 6.5,
+            right: 17,
+            child: ElevatedButton(
               onPressed: _currentLocation,
+              style: ElevatedButton.styleFrom(
+                elevation: 5,
+                shape: const CircleBorder(
+                  side: BorderSide.none,
+                ),
+              ),
               child: Material(
                 child: Padding(
                   padding: const EdgeInsets.all(17.0),
                   child: Image.asset(
                     "assets/images/target-icon-4510.png",
-                    height: 23,
+                    height: 28,
                   ),
                 ),
-                elevation: 7,
+                elevation: 5,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50),
                 ),
@@ -119,6 +135,15 @@ class _MapPageState extends State<MapPage> {
           ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(
+          Icons.layers,
+          size: 32,
+        ),
+        onPressed: _toggleMapType,
+        heroTag: null,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 
