@@ -30,68 +30,67 @@ class DetailedInfo extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Pothole Details"),
+        title: const Text("Pothole Details"),
       ),
       body: SafeArea(
-        child: Stack(
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: height / 50,
-                  width: double.infinity,
-                ),
-                Center(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      width: double.infinity,
-                      constraints: BoxConstraints(maxWidth: width / 1.3),
-                      height: height / 2.5,
-                      child: Hero(
-                        tag: Key(
-                          index.toString(),
-                        ),
-                        child: Image.network(
-                          item["image url"],
-                          fit: BoxFit.cover,
-                        ),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: height / 50,
+                width: double.infinity,
+              ),
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    width: double.infinity,
+                    constraints: BoxConstraints(maxWidth: width / 1.3),
+                    height: height / 2.5,
+                    child: Hero(
+                      tag: Key(
+                        index.toString(),
+                      ),
+                      child: Image.network(
+                        item["image url"],
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
                 ),
-                placeHolders(
-                  "City",
-                  item['City'],
-                ),
-                placeHolders(
-                  "Address",
-                  item['Address of Pothole'],
-                ),
-                placeHolders(
-                  "Location",
-                  item['Longitude'].toString() +
-                      ", " +
-                      item['Latitude'].toString(),
-                ),
-                placeHolders(
-                  "Phone No.",
-                  item['Phone No'],
-                ),
-                placeHolders(
-                  "Description",
-                  item['Description of Pothole'],
-                ),
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Center(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 40, vertical: 16),
+              ),
+              placeHolders(
+                "City",
+                item['City'],
+              ),
+              placeHolders(
+                "Address",
+                item['Address of Pothole'],
+              ),
+              placeHolders(
+                "Location",
+                item['Longitude'].toString() +
+                    ", " +
+                    item['Latitude'].toString(),
+              ),
+              placeHolders(
+                "Phone No.",
+                item['Phone No'],
+              ),
+              placeHolders(
+                "Description",
+                item['Description of Pothole'],
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+                child: Center(
+                  child: SizedBox(
+                    width: 350,
                     child: Row(
                       children: [
                         Expanded(
@@ -147,9 +146,12 @@ class DetailedInfo extends StatelessWidget {
                     ),
                   ),
                 ),
-              ],
-            ),
-          ],
+              ),
+              const SizedBox(
+                height: 20,
+              )
+            ],
+          ),
         ),
       ),
     );
