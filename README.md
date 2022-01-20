@@ -140,12 +140,12 @@ Drive Link Folder:
 <table>
   <tr>
     <td>Informing About Potholes</td>
-     <td>Getting Details of Potholes for Administrator</td>
-     <td>Showing Map Location of Potholes for Administrator</td>
+     <td>Details of Potholes for Administrator</td>
+     <td>Map displaying location of Potholes</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/Amogh-Prabhu/Pothole-Informer-TEAM-DASU/blob/main/Images/image1.jpg?raw=true" width=370 height=480></td>
-    <td><img src="https://github.com/Amogh-Prabhu/Pothole-Informer-TEAM-DASU/blob/main/Images/image2.jpg?raw=true" width=370 height=480></td>
-    <td><img src="https://github.com/Amogh-Prabhu/Pothole-Informer-TEAM-DASU/blob/main/Images/image3.jpg?raw=true" width=370 height=480></td>
+    <td><img src="https://github.com/utkarsh-009/Pothole-Informer-TEAM-DASU/blob/Amogh/Images/image1.jpg?raw=true" width=270 height=480></td>
+    <td><img src="https://github.com/utkarsh-009/Pothole-Informer-TEAM-DASU/blob/Amogh/Images/image2.jpg?raw=true" width=270 height=480></td>
+    <td><img src="https://github.com/utkarsh-009/Pothole-Informer-TEAM-DASU/blob/Amogh/Images/image3.jpg?raw=true" width=270 height=480></td>
   </tr>
  </table>
