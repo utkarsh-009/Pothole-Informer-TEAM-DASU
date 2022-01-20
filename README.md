@@ -1,7 +1,7 @@
 # Pothole Informer
 
 <p align="center">
-  <img src="https://github.com/utkarsh-009/Pothole-Informer-TEAM-DASU/blob/main/Images/banner.png?raw=true" alt="Pothole Informer - Team DASU" height = 200 width = 1000>
+  <img src="https://github.com/utkarsh-009/Pothole-Informer-TEAM-DASU/blob/main/Images/banner.png?raw=true" alt="Pothole Informer - Team DASU">
 </p>
 
 ### Team name: TEAM DASU
