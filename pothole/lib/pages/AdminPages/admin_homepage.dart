@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pothole/pages/AdminPages/pothole_details.dart';
@@ -75,6 +74,7 @@ class ItemHolder extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
+        physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) {
           return InkWell(
             child: PotholeWidget(
