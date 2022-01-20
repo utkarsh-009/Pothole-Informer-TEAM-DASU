@@ -2,26 +2,23 @@
 
 ### Team name: TEAM DASU
 
-## Team members
+## 👥 Team members
 
-- Amogh Prabhu - amoghprabhu2@gmail.com
+- [Amogh Prabhu](https://github.com/Amogh-Prabhu/) - amoghprabhu2@gmail.com
 
-- Soumitra Kand - soumitrakand3@gmail.com
+- [Soumitra Kand](https://github.com/soumitrakand7/) - soumitrakand3@gmail.com
 
-- Utkarsh Patil - utkarshpatil2001@gmail.com
+- [Utkarsh Patil](https://github.com/utkarsh-009/) - utkarshpatil2001@gmail.com
 
-## Mentors
+## 👩‍🏫 Mentors
 
-- Chaitravi Chalke
+- [Chaitravi Chalke](https://github.com/chaitravi-ce)
 
-- Krishna Asher
+- [Krishna Asher]()
 
-## Description
+## 📄 Description
 
-Pothole Informer is an android application that helps users to provide
-the information about the potholes in their area. Users can also view
-the potholes in their locality. The information submitted by the users
-will be provided to the concerned authorities.
+> Pothole Informer is an android application that helps users to provide the information about the potholes in their area. Users can also view the potholes in their locality. The information submitted by the users will be provided to the concerned authorities.
 
 - GitHub repo link:
   [**https://github.com/utkarsh-009/Pothole-Informer-TEAM-DASU**](https://github.com/utkarsh-009/Pothole-Informer-TEAM-DASU)
@@ -29,9 +26,9 @@ will be provided to the concerned authorities.
 - Drive link:
   [**https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd**](https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd)
 
-## Technology stack
+## 👨‍💻 Technology stack
 
-We used Dart Language and Flutter as Framework. We used firebase for the backend.
+> We used Dart Language and Flutter as Framework. We used firebase for the backend.
 
 1.  [Dart](https://dart.dev/)
 
@@ -41,25 +38,26 @@ We used Dart Language and Flutter as Framework. We used firebase for the backend
 
 4.  [Google Maps API](https://mapsplatform.google.com/)
 
-## Progress
+## 📈 Progress
 
-- [x] Informing about Potholes
+> :white_check_mark: Informing about Potholes
+>
+> :white_check_mark: Viewing Potholes in Google Maps
+>
+> :white_check_mark: Google User Authentication
+>
+> :white_check_mark: Administrator getting Information about Informed Potholes
+>
+> :white_check_mark: Track user location.
+>
+> :black_square_button: Response to the user by admin.
+>
+> :black_square_button: Feedback by user.
+>
 
-- [x] Viewing Potholes in Google Maps
+## 📃 Project Setup
 
-- [x] Google User Authentication
-
-- [x] Administrator getting Information about Informed Potholes
-
-- [x] Track user location.
-
-- [ ] Response to the user by admin.
-
-- [ ] Feedback by user.
-
-## Project Setup
-
-Requirements:
+👉 Requirements:
 
 1.  Any Operating System (ie. MacOS X, Linux, Windows)
 
@@ -67,11 +65,9 @@ Requirements:
 
 3.  A little knowledge of Dart and Flutter.
 
-4.  The more you know: Dart is an open-source general-purpose programming language. It was originally developed by Google. Dart is an object-oriented language with C-style syntax. It supports programming concepts like interfaces, classes, unlike other programming languages.
+4.  1 GB storage
 
-5.  1 GB storage
-
-Setup:
+💻 Setup:
 
 1.  Clone this github repository into your local device.
 
@@ -83,58 +79,48 @@ Setup:
 
 5.  If you want to collaborate please contact the undersigned.
 
-## Usage
+## 📜 Usage
 
-For Users:
+👤 For Users:
 
-User first has to login to our app using his/her Gmail account.
+1. User first has to login to our app using his/her Gmail account.
 
-After logging in to our app, the user is directed to the homepage of our app. Here users can select from the options provided.
+2. After logging in to our app, the user is directed to the homepage of our app. Here users can select from the options provided.
 
-- Inform
+    - Inform
+    - Map
+    - Feedback
+    - Tracker
+    - Stats
+    - About
 
-- Map
+3. In the inform page the user can submit all the details about the pothole. User has to enter his phone number and location of the pothole and can enter the description of the pothole and can upload its picture.
 
-- Feedback
+4. In the maps page users can view all the potholes that have been uploaded by other users.
 
-- Tracker
+👨‍💼 For admins:
 
-- Stats
+1.  Admin has to login using his credentials.
 
-- About
+2.  In the admin page you can view the details of the potholes submitted by the users.
 
-In the inform page the user can submit all the details about the pothole. User has to enter his phone number and location of the pothole and can enter the description of the pothole and can upload its picture.
+3.  To view the details of the pothole, click on the image to navigate to the pothole details page.
 
-In the maps page users can view all the potholes that have been uploaded by other users.
+4.  In this page the location and the description of the pothole will be visible.
 
-For admins:
+5.  To view the location of the pothole on the map by clicking the “Open in maps” button. This button will navigate the user to the google maps page.
 
-Admin has to login using his credentials.
+## 🤳 Applications
 
-1.  In the admin page you can view the details of the potholes submitted
-    by the users.
+>Each and every year due to the rainy season numerous potholes get created at various places, this causes lots of accidents to occur. This application can be used by local people to inform about the potholes (by sharing the location) that are dangerous and need to be fixed. This application will send these data to the municipal corporation, where the corporation can take actions by filling the pothole, or putting a signboard, etc.
 
-2.  To view the details of the pothole, click on the image to navigate
-    to the pothole details page.
+## 🔮 Future scope
 
-3.  In this page the location and the description of the pothole will
-    be visible.
+>In the near future, if the app gets approved by some government body, we can develop the admin side of the app giving it more functionalities like accepting requests, updating the status of a complaint, etc. This status will reflect on the user’s side of the app on the Tracker Page which will give him/her real time updates and improve the overall user experience.
 
-4.  To view the location of the pothole on the map by clicking the “Open
-    in maps” button. This button will navigate the user to the google
-    maps page.
+## 📷 Screenshots
 
-## Applications
-
-Each and every year due to the rainy season numerous potholes get created at various places, this causes lots of accidents to occur. This application can be used by local people to inform about the potholes (by sharing the location) that are dangerous and need to be fixed. This application will send these data to the municipal corporation, where the corporation can take actions by filling the pothole, or putting a signboard, etc.
-
-## Future scope
-
-In the near future, if the app gets approved by some government body, we can develop the admin side of the app giving it more functionalities like accepting requests, updating the status of a complaint, etc. This status will reflect on the user’s side of the app on the Tracker Page which will give him/her real time updates and improve the overall user experience.
-
-## Screenshots
-
-Drive Link Folder:
+🔗 Drive Link Folder:
 [**https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd**](https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd)
 
 <table>
