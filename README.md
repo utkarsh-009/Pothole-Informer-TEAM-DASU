@@ -31,7 +31,7 @@ will be provided to the concerned authorities.
 
 ## Technology stack
 
-## We used Dart Language and Flutter as Framework. We used firebase for the backend.
+We used Dart Language and Flutter as Framework. We used firebase for the backend.
 
 1.  Dart
 
@@ -44,19 +44,19 @@ will be provided to the concerned authorities.
 
 ## Progress
 
-- [✓]Informing about Potholes
+- [ ] Informing about Potholes
 
-- [✓]Viewing Potholes in Google Maps
+- [ ] Viewing Potholes in Google Maps
 
-- [✓]Google User Authentication
+- [ ] Google User Authentication
 
-- [✓]Administrator getting Information about Informed Potholes
+- [ ] Administrator getting Information about Informed Potholes
 
-- [ ]Track user location.
+- [ ] Track user location.
 
-- [ ]Response to the user by admin.
+- [x] Response to the user by admin.
 
-- [ ]Feedback by user.
+- [x] Feedback by user.
 
 ## Project Setup
 
@@ -165,5 +165,3 @@ will be provided to the concerned authorities.
 - Showing Map Location of Potholes for Administrator
 
 > ![](Images/image3.jpg)
->
-> > > > > > > main
