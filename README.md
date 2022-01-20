@@ -137,14 +137,15 @@ In the near future, if the app gets approved by some government body, we can dev
 Drive Link Folder:
 [**https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd**](https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd)
 
-- Informing About Potholes
-
-![](Images/image1.jpg)
-
-- Getting Details of Potholes for Administrator
-
-![](Images/image2.jpg)
-
-- Showing Map Location of Potholes for Administrator
-
-![](Images/image3.jpg)
+<table>
+  <tr>
+    <td>Informing About Potholes</td>
+     <td>Getting Details of Potholes for Administrator</td>
+     <td>Showing Map Location of Potholes for Administrator</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/Amogh-Prabhu/Pothole-Informer-TEAM-DASU/blob/main/Images/image1.jpg?raw=true" width=370 height=480></td>
+    <td><img src="https://github.com/Amogh-Prabhu/Pothole-Informer-TEAM-DASU/blob/main/Images/image2.jpg?raw=true" width=370 height=480></td>
+    <td><img src="https://github.com/Amogh-Prabhu/Pothole-Informer-TEAM-DASU/blob/main/Images/image3.jpg?raw=true" width=370 height=480></td>
+  </tr>
+ </table>
