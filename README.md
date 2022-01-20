@@ -33,14 +33,13 @@ will be provided to the concerned authorities.
 
 We used Dart Language and Flutter as Framework. We used firebase for the backend.
 
-1.  Dart
+1.  [Dart](https://dart.dev/)
 
-2.  Flutter (Framework)
+2.  [Flutter (Framework)](https://flutter.dev/) 
 
-3.  Firebase for Realtime Data Storage, Firestore and Google
-    authentication
+3.  [Firebase for Realtime Data Storage, Firestore and Google authentication](https://firebase.google.com/)
 
-4.  Google Maps API
+4.  [Google Maps API](https://mapsplatform.google.com/)
 
 ## Progress
 
