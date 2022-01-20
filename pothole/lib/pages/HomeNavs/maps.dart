@@ -86,10 +86,8 @@ class _MapPageState extends State<MapPage> {
     }
 
     return Scaffold(
-      backgroundColor: Colors.deepPurple[50],
       appBar: AppBar(
         title: const Text("Maps"),
-        backgroundColor: Colors.deepPurple[900],
       ),
       body: Stack(
         children: [
