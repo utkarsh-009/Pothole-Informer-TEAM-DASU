@@ -27,7 +27,7 @@ will be provided to the concerned authorities.
   [**https://github.com/utkarsh-009/Pothole-Informer-TEAM-DASU**](https://github.com/utkarsh-009/Pothole-Informer-TEAM-DASU)
 
 - Drive link:
-  [_https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd_](https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd)
+  [**https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd**](https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd)
 
 ## Technology stack
 
@@ -60,7 +60,7 @@ We used Dart Language and Flutter as Framework. We used firebase for the backend
 
 ## Project Setup
 
-> Requirements:
+Requirements:
 
 1.  Any Operating System (ie. MacOS X, Linux, Windows)
 
@@ -72,7 +72,7 @@ We used Dart Language and Flutter as Framework. We used firebase for the backend
 
 5.  1 GB storage
 
-> Setup:
+Setup:
 
 1.  Clone this github repository into your local device.
 
@@ -86,12 +86,11 @@ We used Dart Language and Flutter as Framework. We used firebase for the backend
 
 ## Usage
 
-> For Users:
->
-> User first has to login to our app using his/her Gmail account.
->
-> After logging in to our app, the user is directed to the homepage of
-> our app. Here users can select from the options provided.
+For Users:
+
+User first has to login to our app using his/her Gmail account.
+
+After logging in to our app, the user is directed to the homepage of our app. Here users can select from the options provided.
 
 - Inform
 
@@ -105,17 +104,13 @@ We used Dart Language and Flutter as Framework. We used firebase for the backend
 
 - About
 
-> In the inform page the user can submit all the details about the
-> pothole. User has to enter his phone number and location of the
-> pothole and can enter the description of the pothole and can upload
-> its picture.
->
-> In the maps page users can view all the potholes that have been
-> uploaded by other users.
->
-> For admins:
->
-> Admin has to login using his credentials.
+In the inform page the user can submit all the details about the pothole. User has to enter his phone number and location of the pothole and can enter the description of the pothole and can upload its picture.
+
+In the maps page users can view all the potholes that have been uploaded by other users.
+
+For admins:
+
+Admin has to login using his credentials.
 
 1.  In the admin page you can view the details of the potholes submitted
     by the users.
@@ -132,36 +127,25 @@ We used Dart Language and Flutter as Framework. We used firebase for the backend
 
 ## Applications
 
-> Each and every year due to the rainy season numerous potholes get
-> created at various places, this causes lots of accidents to occur.
-> This application can be used by local people to inform about the
-> potholes (by sharing the location) that are dangerous and need to be
-> fixed. This application will send these data to the municipal
-> corporation, where the corporation can take actions by filling the
-> pothole, or putting a signboard, etc.
+Each and every year due to the rainy season numerous potholes get created at various places, this causes lots of accidents to occur. This application can be used by local people to inform about the potholes (by sharing the location) that are dangerous and need to be fixed. This application will send these data to the municipal corporation, where the corporation can take actions by filling the pothole, or putting a signboard, etc.
 
 ## Future scope
 
-> In the near future, if the app gets approved by some government body, we
-> can develop the admin side of the app giving it more functionalities
-> like accepting requests, updating the status of a complaint, etc. This
-> status will reflect on the user’s side of the app on the Tracker Page
-> which will give him/her real time updates and improve the overall user
-> experience.
+In the near future, if the app gets approved by some government body, we can develop the admin side of the app giving it more functionalities like accepting requests, updating the status of a complaint, etc. This status will reflect on the user’s side of the app on the Tracker Page which will give him/her real time updates and improve the overall user experience.
 
 ## Screenshots
 
-> Drive Link Folder:
-> [_https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd_](https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd)
+Drive Link Folder:
+[**https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd**](https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd)
 
 - Informing About Potholes
 
-> ![](Images/image1.jpg)
+![](Images/image1.jpg)
 
 - Getting Details of Potholes for Administrator
 
-> ![](Images/image2.jpg)
+![](Images/image2.jpg)
 
 - Showing Map Location of Potholes for Administrator
 
-> ![](Images/image3.jpg)
+![](Images/image3.jpg)
