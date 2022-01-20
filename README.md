@@ -35,9 +35,9 @@ We used Dart Language and Flutter as Framework. We used firebase for the backend
 
 1.  [Dart](https://dart.dev/)
 
-2.  [Flutter (Framework)](https://flutter.dev/) 
+2.  [Flutter](https://flutter.dev/) (Framework)
 
-3.  [Firebase for Realtime Data Storage, Firestore and Google authentication](https://firebase.google.com/)
+3.  [Firebase](https://firebase.google.com/) for Realtime Data Storage, Firestore and Google authentication
 
 4.  [Google Maps API](https://mapsplatform.google.com/)
 
